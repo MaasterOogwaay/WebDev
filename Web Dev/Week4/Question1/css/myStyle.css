@@ -1,0 +1,27 @@
+html{
+		font-family: 'Comic Sans MS';
+		text-align: center;
+}
+
+main{
+	background-image: url(../images/imagineCover.png); 
+	background-repeat: no-repeat;
+	background-position: 50px 70px;
+}
+
+h1{
+	color: rgb(255, 174, 0);
+	text-decoration: underline;
+}
+
+.redText{
+	color: red;
+}
+
+p{
+	color: blue;
+}
+
+span{
+	color: green;
+}
