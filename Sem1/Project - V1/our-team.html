@@ -1,169 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Our Team | Apollo Events</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+    <script src="https://kit.fontawesome.com/23facd0a2b.js" crossorigin="anonymous"></script>
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Lato", sans-serif;
+      }
 
-<head>
-  <title>Our Team | Apollo Events</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
-  <script src="https://kit.fontawesome.com/23facd0a2b.js" crossorigin="anonymous"></script>
-  <style>
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Lato", sans-serif;
-    }
+      .w3-bar,
+      h1,
+      button {
+        font-family: "Montserrat", sans-serif;
+      }
 
-    .w3-bar,
-    h1,
-    button {
-      font-family: "Montserrat", sans-serif;
-    }
+      .fa-anchor,
+      .fa-coffee {
+        font-size: 200px;
+      }
+    </style>
+  </head>
 
-    .fa-anchor,
-    .fa-coffee {
-      font-size: 200px;
-    }
-  </style>
-</head>
+  <body>
+    <!-- Navbar -->
+    <div class="w3-top">
+      <div class="w3-navbar w3-bar w3-red w3-card w3-large">
+        <div class="w3-right">
+          <a
+            class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
+            href="javascript:void(0);"
+            onclick="myFunction()"
+            title="Toggle Navigation Menu"
+            ><i class="fa fa-bars"></i
+          ></a>
+          <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-mobile"
+            >Home</a
+          >
+          <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-mobile"
+            >About</a
+          >
+          <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-mobile">Our Team</a>
 
-<body>
-  <!-- Navbar -->
-  <div class="w3-top">
-    <div class="w3-navbar w3-bar w3-red w3-card w3-large">
-      <div class="w3-right">
-        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
-          href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
-            class="fa fa-bars"></i></a>
-        <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-mobile">Home</a>
-        <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-mobile">About</a>
-        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-mobile">Our Team</a>
+          <div class="w3-dropdown-hover w3-mobile">
+            <button class="w3-button w3-hide-small w3-padding-large w3-hover-white">
+              Apply Now <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-red">
+              <a href="join-cc-team.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+                >Join Our CC Teams</a
+              >
+              <a href="join-staff-team.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+                >Join Our Staff Teams</a
+              >
+            </div>
+          </div>
 
-        <div class="w3-dropdown-hover w3-mobile">
-          <button class="w3-button w3-hide-small w3-padding-large w3-hover-white">
-            Apply Now <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-red">
-            <a href="join-cc-team.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Join Our CC
-              Teams</a>
-            <a href="join-staff-team.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Join Our Staff
-              Teams</a>
+          <a href="gallery.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-mobile"
+            >Gallery</a
+          >
+        </div>
+      </div>
+
+      <!-- Navbar on small screens -->
+      <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+        <a href="about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Our Team</a>
+
+        <div class="w3-dropdown-hover">
+          <button class="w3-bar-item w3-button">Apply Now</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="join-cc-team.html" class="w3-bar-item w3-button w3-padding-large">Join Our CC Teams</a>
+            <a href="join-staff-team.html" class="w3-bar-item w3-button w3-padding-large">Join Our Staff Teams</a>
           </div>
         </div>
 
-        <a href="gallery.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-mobile">Gallery</a>
+        <a href="gallery.html" class="w3-bar-item w3-button w3-padding-large">Gallery</a>
       </div>
     </div>
 
-    <!-- Navbar on small screens -->
-    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-      <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
-      <a href="about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">Our Team</a>
+    <!-- Header -->
+    <header class="w3-container w3-red w3-center" style="padding: 128px 16px">
+      <h1 class="w3-margin w3-jumbo">Meet the Team</h1>
+      <p class="w3-xlarge">Check out the members of our current team!</p>
+      <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Apply Now!</button>
+    </header>
 
-      <div class="w3-dropdown-hover">
-        <button class="w3-bar-item w3-button">Apply Now</button>
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="join-cc-team.html" class="w3-bar-item w3-button w3-padding-large">Join Our CC Teams</a>
-          <a href="join-staff-team.html" class="w3-bar-item w3-button w3-padding-large">Join Our Staff Teams</a>
+    <!-- Founders -->
+    <div class="w3-row w3-center">
+      <div>
+        <h2>Upper Management</h2>
+      </div>
+
+      <div class="w3-half w3-container">
+        <div class="w3-card-4">
+          <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+          <div class="w3-container w3-center">
+            <h3>Master Oogway</h3>
+            <p>Founder & Owner</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-half w3-container">
+        <div class="w3-card-4">
+          <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+          <div class="w3-container w3-center">
+            <h3>XpertKenation</h3>
+            <p>Founder & General Manager</p>
+          </div>
         </div>
       </div>
 
-      <a href="gallery.html" class="w3-bar-item w3-button w3-padding-large">Gallery</a>
-    </div>
-  </div>
+      <!-- Management -->
+      <div class="w3-row w3-center">
+        <div>
+          <h2>Management</h2>
+        </div>
 
-  <!-- Header -->
-  <header class="w3-container w3-red w3-center" style="padding: 128px 16px">
-    <h1 class="w3-margin w3-jumbo">Apollo Events</h1>
-    <p class="w3-xlarge">Your Convoy Specialists</p>
-    <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">
-      Join Today!
-    </button>
-  </header>
-
-  <!-- About Us -->
-  <div class="w3-row-padding w3-padding-64 w3-container">
-    <div class="w3-content">
-      <div class="w3-twothird">
-        <h1>About Us</h1>
-        <h5 class="w3-padding-32">
-          Founded in February of 2022 by Master Oogway and later
-          XpertKenation,
-        </h5>
-
-        <p class="w3-text-grey">
-          Apollo Events sets out to provide the TruckersMP community with a
-          professional convoy supervision group which takes all precautions to
-          make sure the supervision of your event on either public servers or
-          event servers, is to the highest standard. To achieve this, we
-          choose to work very closely with you along every step of the way
-        </p>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>Master Oogway</h3>
+              <p>Founder & Owner</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>XpertKenation</h3>
+              <p>Founder & General Manager</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>Master Oogway</h3>
+              <p>Founder & Owner</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>TEST</h3>
+              <p>Founder & General Manager</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- CHANGE THIS -->
-      <div class="w3-third w3-center">
-        <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
-      </div>
-    </div>
-  </div>
+      <!-- Staff Members -->
+      <div class="w3-row w3-center">
+        <div>
+          <h2>Staff Members</h2>
+        </div>
 
-  <!-- Event Supervisionn Cards -->
-  <div class="w3-row w3-center">
-    <div>
-      <h2>Event Supervision</h2>
-      <p>Still not sure weither to choose Apollo Events or not? Check out what we can provide!</p>
-    </div>
-    <div class="w3-third w3-container">
-      <div class="w3-card-4" style="min-height: 150px;">
-        <h2>Professional Event Supervisions</h2>
-        <p>We take full control, no need to worry about your event</p>
-      </div>
-    </div>
-    <div class="w3-third w3-container">
-      <div class="w3-card-4" style="min-height: 150px;">
-        <h2>Professional Event Staff</h2>
-        <p>Our application system means only some of the best join the team</p>
-      </div>
-    </div>
-    <div class="w3-third w3-container">
-      <div class="w3-card-4" style="min-height: 150px;">
-        <h2>Qualified Team Leaders</h2>
-        <p>Our teams are lead by only some of the best/most experienced players there is</p>
-      </div>
-    </div>
-  </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>Master Oogway</h3>
+              <p>Event Supervisor</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>Mr.Swift</h3>
+              <p>Event Supervisor</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>Finn Keegan</h3>
+              <p>Event Supervisor</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>Irish</h3>
+              <p>Event Team</p>
+            </div>
+          </div>
+        </div>
 
-  <!-- Footer -->
-  <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-    <div class="w3-xlarge w3-padding-32">
-      <i class="fa-brands fa-discord w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-    </div>
-    <p>
-      Powered by
-      <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
-    </p>
-  </footer>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>XpertKenation</h3>
+              <p>HR Team</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>Alfie6906</h3>
+              <p>CC Team</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>Arandomguy</h3>
+              <p>CC Team</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>Castle</h3>
+              <p>CC Team</p>
+            </div>
+          </div>
+        </div>
 
-  <script>
-    // Used to toggle the menu on small screens when clicking on the menu button
-    function myFunction() {
-      var x = document.getElementById("navDemo");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else {
-        x.className = x.className.replace(" w3-show", "");
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>ianolaf</h3>
+              <p>CC Team</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>MonkeyBoss</h3>
+              <p>CC Team</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>ow605en</h3>
+              <p>CC Team</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>Simulation Gaming TTV</h3>
+              <p>CC Team</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>Wander</h3>
+              <p>CC Team</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>Zackoriousda69th</h3>
+              <p>CC Team</p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-quarter w3-container">
+          <div class="w3-card-4">
+            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <div class="w3-container w3-center">
+              <h3>premier_truck_spotting</h3>
+              <p>CC Team</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event Supervisionn Cards -->
+    <div class="w3-row w3-center">
+      <div>
+        <h2>Event Supervision</h2>
+        <p>Still not sure weither to choose Apollo Events or not? Check out what we can provide!</p>
+      </div>
+      <div class="w3-third w3-container">
+        <div class="w3-card-4" style="min-height: 150px">
+          <h2>Professional Event Supervisions</h2>
+          <p>We take full control, no need to worry about your event</p>
+        </div>
+      </div>
+      <div class="w3-third w3-container">
+        <div class="w3-card-4" style="min-height: 150px">
+          <h2>Professional Event Staff</h2>
+          <p>Our application system means only some of the best join the team</p>
+        </div>
+      </div>
+      <div class="w3-third w3-container">
+        <div class="w3-card-4" style="min-height: 150px">
+          <h2>Qualified Team Leaders</h2>
+          <p>Our teams are lead by only some of the best/most experienced players there is</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+      <div class="w3-xlarge w3-padding-32">
+        <i class="fa-brands fa-discord w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+      </div>
+      <p>
+        Powered by
+        <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+      </p>
+    </footer>
+
+    <script>
+      // Used to toggle the menu on small screens when clicking on the menu button
+      function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
       }
-    }
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
