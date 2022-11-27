@@ -5,8 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Baloo+Paaji|Open+Sans:300,300i,400,400i,600,600i,700,700i"
+    />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
     <script src="https://kit.fontawesome.com/23facd0a2b.js" crossorigin="anonymous"></script>
     <style>
@@ -17,13 +19,13 @@
       h4,
       h5,
       h6 {
-        font-family: "Lato", sans-serif;
+        font-family: "Baloo Paaji";
       }
 
       .w3-bar,
       h1,
       button {
-        font-family: "Montserrat", sans-serif;
+        font-family: "Baloo Paaji";
       }
 
       .fa-anchor,
@@ -36,51 +38,70 @@
   <body>
     <!-- Navbar -->
     <div class="w3-top">
-      <div class="w3-navbar w3-bar w3-card w3-large" style="background-color: #4400BE; font-weight: bold;">
+      <div class="w3-navbar w3-bar w3-card w3-large" style="background-color: #4400be; font-weight: bold">
         <div class="w3-right">
-          <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-aqua w3-large"
-            href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
-              class="fa fa-bars"></i></a>
-          <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-aqua w3-mobile">Home</a>
-          <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-aqua w3-mobile">About</a>
-          <a href="our-team.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-aqua w3-mobile">Our Team</a>
-  
+          <a
+            class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-aqua w3-large"
+            href="javascript:void(0);"
+            onclick="myFunction()"
+            title="Toggle Navigation Menu"
+            ><i class="fa fa-bars"></i
+          ></a>
+          <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-aqua w3-mobile">Home</a>
+          <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-aqua w3-mobile"
+            >About</a
+          >
+          <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-aqua w3-mobile"
+            >Our Team</a
+          >
+
           <div class="w3-dropdown-hover w3-mobile">
             <button class="w3-button w3-hide-small w3-padding-large w3-hover-aqua">
               Apply Now <i class="fa fa-caret-down"></i>
             </button>
             <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-white">
-              <a href="join-cc-team.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-aqua">Join Our CC
-                Teams</a>
-              <a href="join-staff-team.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-aqua">Join Our Staff
-                Teams</a>
+              <a href="join-cc-team.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-aqua"
+                >Join Our CC Teams</a
+              >
+              <a href="join-staff-team.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-aqua"
+                >Join Our Staff Teams</a
+              >
             </div>
           </div>
-  
-          <a href="gallery.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-aqua w3-mobile">Gallery</a>
+
+          <a href="gallery.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-aqua w3-mobile"
+            >Gallery</a
+          >
         </div>
       </div>
-  
+
       <!-- Navbar on small screens -->
       <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-aqua">Home</a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-aqua">Home</a>
         <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-aqua">About</a>
-        <a href="our-team.html" class="w3-bar-item w3-button w3-padding-large w3-hover-aqua">Our Team</a>
-  
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-aqua">Our Team</a>
+
         <div class="w3-dropdown-hover">
           <button class="w3-bar-item w3-button w3-hover-aqua">Apply Now <i class="fa fa-caret-down"></i></button>
           <div class="w3-dropdown-content w3-bar-block w3-card-4">
-            <a href="join-cc-team.html" class="w3-bar-item w3-button w3-padding-large w3-hover-aqua">Join Our CC Teams</a>
-            <a href="join-staff-team.html  " class="w3-bar-item w3-button w3-padding-large w3-hover-aqua">Join Our Staff Teams</a>
+            <a href="join-cc-team.html" class="w3-bar-item w3-button w3-padding-large w3-hover-aqua"
+              >Join Our CC Teams</a
+            >
+            <a href="join-staff-team.html  " class="w3-bar-item w3-button w3-padding-large w3-hover-aqua"
+              >Join Our Staff Teams</a
+            >
           </div>
         </div>
-  
+
         <a href="gallery.html" class="w3-bar-item w3-button w3-padding-large w3-hover-aqua">Gallery</a>
       </div>
     </div>
 
     <!-- Header -->
-    <header class="w3-container w3-red w3-center" style="padding: 128px 16px">
+    <header
+      class="w3-container w3-red w3-center"
+      style="padding: 128px 16px; background-image: url(./images/meet-the-team.png); height: 700px"
+    >
       <h1 class="w3-margin w3-jumbo">Meet the Team</h1>
       <p class="w3-xlarge">Check out the members of our current team!</p>
       <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Apply Now!</button>
@@ -94,7 +115,7 @@
 
       <div class="w3-half w3-container">
         <div class="w3-card-4">
-          <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+          <img src="images/oogway_pfp.png" style="width: 100%" />
           <div class="w3-container w3-center">
             <h3>Master Oogway</h3>
             <p>Founder & Owner</p>
@@ -103,54 +124,10 @@
       </div>
       <div class="w3-half w3-container">
         <div class="w3-card-4">
-          <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+          <img src="images/xpert_pfp.png" style="width: 100%" />
           <div class="w3-container w3-center">
             <h3>XpertKenation</h3>
             <p>Founder & General Manager</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Management -->
-      <div class="w3-row w3-center">
-        <div>
-          <h2>Management</h2>
-        </div>
-
-        <div class="w3-quarter w3-container">
-          <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
-            <div class="w3-container w3-center">
-              <h3>Master Oogway</h3>
-              <p>Founder & Owner</p>
-            </div>
-          </div>
-        </div>
-        <div class="w3-quarter w3-container">
-          <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
-            <div class="w3-container w3-center">
-              <h3>XpertKenation</h3>
-              <p>Founder & General Manager</p>
-            </div>
-          </div>
-        </div>
-        <div class="w3-quarter w3-container">
-          <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
-            <div class="w3-container w3-center">
-              <h3>Master Oogway</h3>
-              <p>Founder & Owner</p>
-            </div>
-          </div>
-        </div>
-        <div class="w3-quarter w3-container">
-          <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
-            <div class="w3-container w3-center">
-              <h3>TEST</h3>
-              <p>Founder & General Manager</p>
-            </div>
           </div>
         </div>
       </div>
@@ -161,36 +138,36 @@
           <h2>Staff Members</h2>
         </div>
 
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/oogway_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>Master Oogway</h3>
               <p>Event Supervisor</p>
             </div>
           </div>
         </div>
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/swift_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>Mr.Swift</h3>
               <p>Event Supervisor</p>
             </div>
           </div>
         </div>
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/finn_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>Finn Keegan</h3>
               <p>Event Supervisor</p>
             </div>
           </div>
         </div>
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/irish_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>Irish</h3>
               <p>Event Team</p>
@@ -198,36 +175,36 @@
           </div>
         </div>
 
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/xpert_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>XpertKenation</h3>
               <p>HR Team</p>
             </div>
           </div>
         </div>
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/alfie_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>Alfie6906</h3>
               <p>CC Team</p>
             </div>
           </div>
         </div>
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/randy_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>Arandomguy</h3>
               <p>CC Team</p>
             </div>
           </div>
         </div>
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/castle_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>Castle</h3>
               <p>CC Team</p>
@@ -235,36 +212,36 @@
           </div>
         </div>
 
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/creeper_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
-              <h3>ianolaf</h3>
+              <h3>premier_truck_spotting</h3>
               <p>CC Team</p>
             </div>
           </div>
         </div>
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/monkey_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>MonkeyBoss</h3>
               <p>CC Team</p>
             </div>
           </div>
         </div>
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/owen_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>ow605en</h3>
               <p>CC Team</p>
             </div>
           </div>
         </div>
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/sim_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>Simulation Gaming TTV</h3>
               <p>CC Team</p>
@@ -272,69 +249,34 @@
           </div>
         </div>
 
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/wander_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>Wander</h3>
               <p>CC Team</p>
             </div>
           </div>
         </div>
-        <div class="w3-quarter w3-container">
+        <div class="w3-quarter w3-container w3-padding">
           <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
+            <img src="images/zack_pfp.png" style="width: 100%" />
             <div class="w3-container w3-center">
               <h3>Zackoriousda69th</h3>
               <p>CC Team</p>
             </div>
           </div>
         </div>
-        <div class="w3-quarter w3-container">
-          <div class="w3-card-4">
-            <img src="images/traffic-signs-g9ca746a1d_640.png" style="width: 100%" />
-            <div class="w3-container w3-center">
-              <h3>premier_truck_spotting</h3>
-              <p>CC Team</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Event Supervisionn Cards -->
-    <div class="w3-row w3-center">
-      <div>
-        <h2>Event Supervision</h2>
-        <p>Still not sure weither to choose Apollo Events or not? Check out what we can provide!</p>
-      </div>
-      <div class="w3-third w3-container">
-        <div class="w3-card-4" style="min-height: 150px">
-          <h2>Professional Event Supervisions</h2>
-          <p>We take full control, no need to worry about your event</p>
-        </div>
-      </div>
-      <div class="w3-third w3-container">
-        <div class="w3-card-4" style="min-height: 150px">
-          <h2>Professional Event Staff</h2>
-          <p>Our application system means only some of the best join the team</p>
-        </div>
-      </div>
-      <div class="w3-third w3-container">
-        <div class="w3-card-4" style="min-height: 150px">
-          <h2>Qualified Team Leaders</h2>
-          <p>Our teams are lead by only some of the best/most experienced players there is</p>
-        </div>
       </div>
     </div>
 
     <!-- Footer -->
-    <footer class="w3-container w3-padding w3-center" style="background-color: #4400BE; font-weight: bold;">
+    <footer class="w3-container w3-padding w3-center" style="background-color: #4400be; font-weight: bold">
       <div class="w3-xlarge w3-padding">
         <i class="fa-brands fa-discord w3-hover-opacity"></i>
         <i class="fa fa-instagram w3-hover-opacity"></i>
       </div>
-  
+
       <div class="w3-half">
         <p class="w3-center">&copy; Apollo Events 2022</p>
       </div>
