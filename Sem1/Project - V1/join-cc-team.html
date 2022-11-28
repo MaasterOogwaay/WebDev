@@ -32,6 +32,43 @@
       .fa-coffee {
         font-size: 200px;
       }
+
+      .accordion {
+        background-color: #eee;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 5s;
+      }
+
+      .active,
+      .accordion:hover {
+        background-color: #ccc;
+      }
+
+      .accordion:after {
+        content: "\002B";
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+
+      .active:after {
+        content: "\2212";
+      }
+
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
     </style>
   </head>
 
@@ -101,54 +138,106 @@
     <header class="w3-container w3-red w3-center" style="padding: 128px 16px">
       <h1 class="w3-margin w3-jumbo">Apollo Events</h1>
       <p class="w3-xlarge">Your Convoy Specialists</p>
-      <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Join Today!</button>
     </header>
 
     <!-- About Us -->
     <div class="w3-row-padding w3-padding-64 w3-container">
-      <div class="w3-content">
-        <div class="w3-twothird">
-          <h1>About Us</h1>
-          <h5 class="w3-padding-32">Founded in February of 2022 by Master Oogway and later XpertKenation,</h5>
+      <!-- CC accordion -->
+      <button class="accordion">Convoy Control Team <span class="w3-badge w3-green">Open!</span></button>
+      <div class="panel">
+        <h6>CC Team Application</h6>
+        <p>
+          Hello there! Welcome to the CC Team application form and thank you for showing your interest in Apollo Events!
+          In order to be considered as a potential member of the team, please fill out this form properly and correctly.
+          <hr>
+          In order to become part of the CC Team, please make sure you meet the following criteria;
+          <ol>
+            <li>Be over 13 years old </li>
+            <li>Be able to understand and speak English</li>
+            <li>Have a minimum of 100 hours on ETS2</li>
+            <li>Have promods</li>
+            <li>Have a working microphone</li>
+            <li>Have a stable WI-FI connection</li>
+            <li>Have knowledge of loading saves</li>
+            <li>Have not been banned within the last 60 days</li>
+          </ol>
+          <hr>
+          *Please note: Exceptions can be made in certain situations* 
+          <hr>
+          You'll need the following information in order to complete the next section;
+          <ol>
+            <li>Discord name and tag</li>
+            <li>TruckersMP profile link</li>
+            <li>Steam profile link</li>
+          </ol>
+        </p>
+      </div>
 
-          <p class="w3-text-grey">
-            Apollo Events sets out to provide the TruckersMP community with a professional convoy supervision group
-            which takes all precautions to make sure the supervision of your event on either public servers or event
-            servers, is to the highest standard. To achieve this, we choose to work very closely with you along every
-            step of the way
-          </p>
-        </div>
+      <!-- MT accordion -->
+      <button class="accordion">Media Team <span class="w3-badge w3-green">Open!</span></button>
+      <div class="panel">
+        <h6>Media Team Application</h6>
+        <p>
+          Hello there! Welcome to the Media Team application form and thank you for showing your interest in Apollo Events! In order to be considered as a potential member of the team, please fill out this form properly and correctly. 
+          <hr>
+          In order to become part of the CC Team, please make sure you meet the following criteria;
+          <ol>
+            <li>Be over 13 years old </li>
+            <li>Be able to understand and speak English</li>
+            <li>Have a minimum of 150 hours on ETS2</li>
+            <li>Have promods</li>
+            <li>Have a working microphone</li>
+            <li>Have a stable WI-FI connection</li>
+            <li>Be able to run ETS2 on at high graphics</li>
+            <li>Have knowledge of loading saves</li>
+            <li>Have not been banned within the last 60 days</li>
+          </ol>
+          <hr>
+          *Please note: Exceptions can be made in certain situations* 
+          <hr>
+          You'll need the following information in order to complete the next section;
+          <ol>
+            <li>Discord name and tag</li>
+            <li>TruckersMP profile link</li>
+            <li>Steam profile link</li>
+            <li>Proof of you media</li>
+          </ol>
+        </p>
+      </div>
 
-        <!-- CHANGE THIS -->
-        <div class="w3-third w3-center">
-          <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
-        </div>
-      </div>
-    </div>
-
-    <!-- Event Supervisionn Cards -->
-    <div class="w3-row w3-center">
-      <div>
-        <h2>Event Supervision</h2>
-        <p>Still not sure weither to choose Apollo Events or not? Check out what we can provide!</p>
-      </div>
-      <div class="w3-third w3-container">
-        <div class="w3-card-4" style="min-height: 150px">
-          <h2>Professional Event Supervisions</h2>
-          <p>We take full control, no need to worry about your event</p>
-        </div>
-      </div>
-      <div class="w3-third w3-container">
-        <div class="w3-card-4" style="min-height: 150px">
-          <h2>Professional Event Staff</h2>
-          <p>Our application system means only some of the best join the team</p>
-        </div>
-      </div>
-      <div class="w3-third w3-container">
-        <div class="w3-card-4" style="min-height: 150px">
-          <h2>Qualified Team Leaders</h2>
-          <p>Our teams are lead by only some of the best/most experienced players there is</p>
-        </div>
+      <!-- Event accordion -->
+      <button class="accordion">Event Team <span class="w3-badge w3-green">Open!</span></button>
+      <div class="panel">
+        <h6>Event Team Application</h6>
+        <p>
+          Hello there! Welcome to the Event Team application form and thank you for showing your interest in Apollo Events!
+          In order to be considered as a potential member of the team, please fill out this form properly and correctly.
+          <hr>
+          In order to become part of the Event Team, please make sure you meet the following criteria;
+          <ol>
+            <li>Be over 13 years old </li>
+            <li>Be able to understand and speak English</li>
+            <li>Have a minimum of 100 hours on ETS2</li>
+            <li>Have promods</li>
+            <li>Have a working microphone</li>
+            <li>Have a stable WI-FI connection</li>
+            <li>Have knowledge of loading saves</li>
+            <li>Have not been banned within the last 60 days</li>
+            <li>Know both base game and promods map well</li>
+            <li>Able to decipher between good and bad routes</li>
+            <li>Be easily approachable</li>
+            <li>Be able to promote and invite VTC's easily</li>
+          </ol>
+          <hr>
+          *Please note: Exceptions can be made in certain situations* 
+          <hr>
+          You'll need the following information in order to complete the next section;
+          <ol>
+            <li>Discord name and tag</li>
+            <li>TruckersMP profile link</li>
+            <li>Steam profile link</li>
+          </ol>
+        </p>
       </div>
     </div>
 
@@ -180,6 +269,32 @@
         } else {
           x.className = x.className.replace(" w3-show", "");
         }
+      }
+
+      // W3CSS accordian
+      // function myFunction(id) {
+      //   var x = document.getElementById(id);
+      //   if (x.className.indexOf("w3-show") == -1) {
+      //     x.className += " w3-show";
+      //   } else {
+      //     x.className = x.className.replace(" w3-show", "");
+      //   }
+      // }
+
+      // CSS accordion
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
       }
     </script>
   </body>
