@@ -1,138 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<title>Conforming XHTML 1.1 Template</title>
-		<link rel="stylesheet" href="css/w3.css"/>
-	</head>
-	<body>
 
-		<div><img src="/images/TUS_Logo.png" alt="TUS logo" style="width: 100%;"/></div>
+<head>
+	<title>Conforming XHTML 1.1 Template</title>
+	<link rel="stylesheet" href="css/w3.css" />
+</head>
 
-		<div class="w3-black w3-center"><h1>Web App Development Registration</h1></div>
+<body>
 
-		<form method="post" action="mailto:jbloggs@tus.ie?subject=Website Info" enctype="text/plain">
-			<fieldset>
-				<legend>Personal Details</legend>
-				<table>
-					<tr>
-						<td>First Name</td>
-						<td><input type="text" name="firstname"/></td>
-					</tr>
-					<tr>
-						<td>Surname</td>
-						<td><input type="text" name="lastname"/></td>
-					</tr>
-					<tr>
-						<td>Address1</td>
-						<td><input type="text" name="address1"/></td>
-					</tr>
-					<tr>
-						<td>Address2</td>
-						<td><input type="text" name="address2"/></td>
-					</tr>
-					<tr>
-						<td>Town</td>
-						<td><input type="text" name="town"/></td>
-					</tr>
-					<tr>
-						<td>Country</td>
-						<td><input type="text" name="country"/></td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<input type="radio" name="sex" value="male"/>Male
-							<input type="radio" name="sex" value="female"/>Female
-							<input type="radio" name="sex" value="other"/>Prefer not to say
-						</td>
-					</tr>
-					<tr>
-						<td>Date of Birth</td>
-						<td><input type="text" name="dob"/></td>
-					</tr>
-				</table>
-			</fieldset>
+	<div><img src="images/TUS_Logo.png" alt="TUS logo" style="width: 100%;" /></div>
 
-			<fieldset>
-				<legend>Login Details</legend>
-				<table>
-					<tr>
-						<td>Password</td>
-						<td><input type="password" name="pwd"/></td>
-					</tr>
-					<tr>
-						<td>User Name</td>
-						<td><input type="text" name="username"/></td>
-					</tr>
-				</table>
-			</fieldset>
+	<div class="w3-black w3-center">
+		<h1>Web App Development Registration</h1>
+	</div>
 
-			<fieldset>
-				<legend>Course Details</legend>
-				<table>
-					<tr>
-						<td colspan="2">
-							<input type="radio" name="sex" value="male"/>Enrolled in Game Dev
-							<input type="radio" name="sex" value="female"/>Enrolled in Cloud Dev
-						</td>
-					</tr>
-					<tr>
-						<td>Car</td>
-						<td>
-							<select name="car">
-								<option value="firstyr">First</option>
-								<option value="secondyr">Second</option>
-								<option value="thirdyr">Third</option>
-								<option value="fourthyr">Fourth</option>
-								<option value="fifthyr">Fifth</option>
-							</select>
-						</td>
-					</tr>
-				</table>
-			</fieldset>
+	<form method="post" action="mailto:jbloggs@tus.ie?subject=Website Info" enctype="text/plain">
+		<fieldset>
+			<legend>Personal Details</legend>
+			<table>
+				<tr>
+					<td>First Name</td>
+					<td><input type="text" name="firstname" /></td>
+				</tr>
+				<tr>
+					<td>Surname</td>
+					<td><input type="text" name="lastname" /></td>
+				</tr>
+				<tr>
+					<td>Address1</td>
+					<td><input type="text" name="address1" /></td>
+				</tr>
+				<tr>
+					<td>Address2</td>
+					<td><input type="text" name="address2" /></td>
+				</tr>
+				<tr>
+					<td>Town</td>
+					<td><input type="text" name="town" /></td>
+				</tr>
+				<tr>
+					<td>Country</td>
+					<td><input type="text" name="country" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="radio" name="sex" value="male" />Male
+						<input type="radio" name="sex" value="female" />Female
+						<input type="radio" name="sex" value="other" />Prefer not to say
+					</td>
+				</tr>
+				<tr>
+					<td>Date of Birth</td>
+					<td><input type="text" name="dob" /></td>
+				</tr>
+			</table>
+		</fieldset>
 
-			<fieldset>
-				<legend>Mailing List</legend>
-				<table>
-					<tr>
-						<td><input type="checkbox" name="mailing" value="add"/></td>
-						<td>I want to be added to the mailing list</td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" name="specialoffers" value="accept"/></td>
-						<td>I want to be notified about any special offers</td>
-					</tr>
-				</table>
-			</fieldset>
+		<fieldset>
+			<legend>Login Details</legend>
+			<table>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="pwd" /></td>
+				</tr>
+				<tr>
+					<td>User Name</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+			</table>
+		</fieldset>
 
-			<fieldset>
-				<legend>Comments</legend>
-				<table>
-					<tr>
-						<td><input type="text" name="comments" value="Enter any comments"/></td>
-					</tr>
-				</table>
-			</fieldset>
+		<fieldset>
+			<legend>Course Details</legend>
+			<table>
+				<tr>
+					<td colspan="2">
+						<input type="radio" name="sex" value="male" />Enrolled in Game Dev
+						<input type="radio" name="sex" value="female" />Enrolled in Cloud Dev
+					</td>
+				</tr>
+				<tr>
+					<td>Car</td>
+					<td>
+						<select name="car">
+							<option value="firstyr">First</option>
+							<option value="secondyr">Second</option>
+							<option value="thirdyr">Third</option>
+							<option value="fourthyr">Fourth</option>
+							<option value="fifthyr">Fifth</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
 
-			<fieldset>
-				<legend>Submit Information</legend>
-				<table>
-					<tr>
-						<td>
-							<input type="submit" value="Send"/>
-						</td>
-						<td>
-							<input type="reset" value="Reset"/>
-						</td>
-					</tr>
-				</table>
-			</fieldset>
-		</form>
+		<fieldset>
+			<legend>Mailing List</legend>
+			<table>
+				<tr>
+					<td><input type="checkbox" name="mailing" value="add" /></td>
+					<td>I want to be added to the mailing list</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="specialoffers" value="accept" /></td>
+					<td>I want to be notified about any special offers</td>
+				</tr>
+			</table>
+		</fieldset>
 
-		<p class="w3-center">
-			<a href="http://validator.w3.org/check?uri=referer"><img
-			  src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
-		</p>
-	</body>
+		<fieldset>
+			<legend>Comments</legend>
+			<table>
+				<tr>
+					<td><input type="text" name="comments" value="Enter any comments" /></td>
+				</tr>
+			</table>
+		</fieldset>
+
+		<fieldset>
+			<legend>Submit Information</legend>
+			<table>
+				<tr>
+					<td>
+						<input type="submit" value="Send" />
+					</td>
+					<td>
+						<input type="reset" value="Reset" />
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+
+	<p class="w3-center">
+		<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml11"
+				alt="Valid XHTML 1.1" height="31" width="88" /></a>
+	</p>
+</body>
+
 </html>
