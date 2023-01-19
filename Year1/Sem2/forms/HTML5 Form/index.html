@@ -6,7 +6,105 @@
 </head>
 
 <body>
-	<h3 style="text-align: center;">This is a HTML5 Template</h3>
+	<h3 style="text-align: center;">Please provide feedback on your visit</h3>
+
+	<form method="post" action="mailto:jbloggs@tus.ie?subject=Website_Info" enctype="text/plain" autocomplete="on">
+		<fieldset>
+			<legend>Personal Details</legend>
+			<table>
+				<tr>
+					<td>First Name</td>
+					<td><input type="text" name="firstname" /></td>
+				</tr>
+				<tr>
+					<td>Surname</td>
+					<td><input type="text" name="lastname" /></td>
+				</tr>
+				<tr>
+					<td>Phone:</td>
+					<td><input type="text" name="phone" required pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+							title="Must be 999-999-9999"></td>
+				</tr>
+				<tr>
+					<td>E-mail:</td>
+					<td><input type="email" name="email" id="email" required></td>
+				</tr>
+				<tr>
+					<td>Date visited</td>
+					<td><input type="date" name="date"></td>
+				</tr>
+
+				<tr>
+					<td>Rate my site from 1 to 5</td>
+					<td>
+						<input type="range" name="rateMe" id="rateMe" min="1" max="5" step="1">
+					</td>
+				</tr>
+				<tr>
+					<td>Cost</td>
+					<td>
+						<input type="number" name="cost" id="cost" min="100" max="1000" step="100" value="300">
+					</td>
+				</tr>
+				<tr>
+					<td>Your URL:</td>
+					<td><input type="url" name="link" id="link" title="e.g. https://www.yourURL.com"></td>
+				</tr>
+				<tr>
+					<td>Comments</td>
+					<td>
+						<textarea id="comment" name="comment" rows="8" cols="50">
+							I Love this site!!!
+
+							Well done.
+						</textarea>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<input type="submit" value="Send" />
+					</td>
+					<td>
+						<input type="reset" value="Reset" />
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+
+		<!-- <fieldset>
+			<legend>Date &amp; Time Details</legend>
+			<table>
+				<tr>
+					<td>Date</td>
+					<td><input type="datetime" name="datetime"></td>
+				</tr>
+				<tr>
+					<td>Local Date-Time</td>
+					<td><input type="datetime-local" name="datetimelocal"></td>
+				</tr>
+				<tr>
+					<td>Month</td>
+					<td><input type="month" name="month"></td>
+				</tr>
+				<tr>
+					<td>Week</td>
+					<td><input type="week" name="week"></td>
+				</tr>
+				<tr>
+					<td>Time</td>
+					<td><input type="time" name="time"></td>
+				</tr>
+				<tr>
+					<td>Date</td>
+					<td><input type="date" name="date"></td>
+				</tr>
+			</table>
+		</fieldset> -->
+	</form>
+	<p style="text-align: center;">
+		<img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_64.png" alt="Valid HTML5 code" />
+	</p>
 </body>
 
 </html>
