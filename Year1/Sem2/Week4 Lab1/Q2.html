@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>For Loops
+		</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<script>
+			htmlText = "<h1>Number Evaluation</h1><hr>";
+
+			var evenCounter = 0;
+			var oddCounter = 0;
+
+			var evenResult = " ";
+			var oddResult = " ";
+
+			var evenSum = 0;
+			var oddSum = 0;
+
+			var start = parseInt(prompt("Enter a start position"));
+			var end = parseInt(prompt("Enter a end position"));
+
+			let temp = 0;
+
+			if (isNaN(start) || isNaN(end)) {
+				document.write("<h1>Something went wrong</h1><hr><p>Please refresh and enter numerical values</p>");
+			} else {
+				if (end < start) {
+					temp=start;
+					start=end;
+					end=temp;
+
+					for (var i = start; i <= end; i++) {
+					if (i%2==0) {
+						evenCounter++;
+						evenResult += i+" ";
+						evenSum += i;
+					} else {
+						oddCounter++;
+						oddResult += i+" ";
+						oddSum += i;
+					}
+				}
+				}
+				// for (var i = start; i <= end; i++) {
+				// 	if (i%2==0) {
+				// 		evenCounter++;
+				// 		evenResult += i+" ";
+				// 		evenSum += i;
+				// 	} else {
+				// 		oddCounter++;
+				// 		oddResult += i+" ";
+				// 		oddSum += i;
+				// 	}
+				// }
+				htmlText +="<h2>Start Position: "+start+"<br>End Position: "+end+"</h2><hr><h2>Even numbers between range: "+evenCounter+"</h2><p>Values Include:\n"+evenResult+"<br>Sum = "+evenSum+"<br>Average = "+(evenSum/evenCounter).toFixed(2)+"</p><hr><h2>Odd numbers between range: "+oddCounter+"</h2><p>Values Include:\n"+oddResult+"<br>Sum = "+oddSum+"<br>Average = "+(oddSum/oddCounter).toFixed(2)+"</p><hr>";
+				document.write(htmlText);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

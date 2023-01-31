@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>For Loops
+		</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<script>
+			htmlText = "<h1>Number Evaluation</h1><hr>";
+
+			var evenCounter = 0;
+			var oddCounter = 0;
+
+			var evenResult = " ";
+			var oddResult = " ";
+
+			var evenSum = 0;
+			var oddSum = 0;
+
+			var start = parseInt(prompt("Enter a start position"));
+			var end = parseInt(prompt("Enter a end position"));
+
+			if (isNaN(start) || isNaN(end)) {
+				document.write("<h1>Something went wrong</h1><hr><p>Please refresh and enter numerical values</p>");
+			} else {
+				for (var i = start; i <= end; i++) {
+					if (i%2==0) {
+						evenCounter++;
+						evenResult += i+" ";
+					} else {
+						oddCounter++;
+						oddResult += i+" ";
+					}
+				}
+				htmlText +="<h2>Start Position: "+start+"<br>End Position: "+end+"</h2><hr><h2>Even numbers between range: "+evenCounter+"</h2><p>Values Include:\n"+evenResult+"</p><hr><h2>Odd numbers between range: "+oddCounter+"</h2><p>Values Include:\n"+oddResult+"</p><hr>";
+				document.write(htmlText);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
