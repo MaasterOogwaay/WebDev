@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>Random Number Generator</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+	<script>
+		function $(id) {
+			return document.getElementById(id);
+		}
+
+		function NumberGenerator() {
+			let value1 = prompt("Please enter a value");
+			let value2 = prompt("Please enter a value");
+			let htmlOut = "";
+			if (isNaN(value1) || isNaN(value2)) {
+
+				htmlOut += "<h1 class='w3-center' style='color: red; font-weight: bold'>Numerical Error</h1><hr>"
+				htmlOut += "<p>The reasons that you are seeing this page is because one of the values you entered is not numerical</p>"
+				htmlOut += "<h3 class='w3-center' style='color: red; font-weight: bold'>Data Entered</h3><hr/>";
+				htmlOut += "<ul><li>" + value1 + "</li><li>" + value2 + "</li></ul><hr/>";
+				htmlOut += "<h1 class='w3-center' style='color: red; font-weight: bold'>Refresh the page and try again</h1>";
+
+				$("theBody").innerHTML = htmlOut;
+			} else {
+				value1 = parseFloat(value1);
+				value2 = parseFloat(value2);
+
+				let temp;
+				if (value1 > value2) {
+					temp = value1;
+					value1 = value2;
+					value2 = temp;
+				}
+				console.log("min value " + value1 + "\tmax value " + value2);
+
+				htmlOut += "<h1 class='w3-center' style='color: blue; font-weight: bold'>Random Number Generator</h1><hr>"
+				htmlOut += "<p>Here is some information on the data you entered</p>"
+				htmlOut += "<ul><li>Minimum Value: " + value1 + "</li><li>Maximum Value: " + value2 + "</li></ul><hr/>";
+				htmlOut += "<h3 class='w3-center' style='color: red; font-weight: bold'>Generating 10 random numbers between these values</h3><hr/>";
+
+				let randValue = 0.0;
+				for (let i = 1; i <= 10; i++) {
+					randValue = (Math.random() * (value2 - value1) + value1).toFixed(2);
+					console.log(randValue);
+					htmlOut += "<li>" + randValue + "</li>";
+				}
+				htmlOut += "</li><hr/>";
+
+				$("theBody").innerHTML = htmlOut;
+			}
+		}
+	</script>
+</head>
+
+<body onload="NumberGenerator()" id="theBody">
+</body>
+
+</html>

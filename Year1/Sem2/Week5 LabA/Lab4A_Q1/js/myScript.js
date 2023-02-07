@@ -1,1 +1,0 @@
-alert("Hello, you are welcome to view my page");

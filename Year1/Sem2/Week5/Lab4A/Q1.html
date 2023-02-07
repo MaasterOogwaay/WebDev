@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>Times Tables</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+	<script>
+		function $(id) {
+			return document.getElementById(id);
+		}
+
+		function TimesTables() {
+			let value = prompt("Please enter an integer between 1 and 20");
+			let htmlOut = "";
+			if (isNaN(value) || value < 1 || value > 20) {
+
+				htmlOut += "<h1 class='w3-center w3-red'>Numerical Error</h1><hr>"
+				htmlOut += "<p>The reasons that you are seeing this page is because of one of the following reasons:</p>"
+				htmlOut += "<ol><li>The value you entered is not a valid number</li><li>The number entered was less than 1</li><li>The number entered was greater than 20</li></ol><hr>"
+				htmlOut += "<h1 class='w3-center w3-red'>Refresh the page and try again</h1>"
+
+				$("theBody").innerHTML = htmlOut;
+			} else {
+				htmlOut += "<h1 class='w3-center w3-blue'>Times Tables</h1><hr/>";
+				htmlOut += "<table border='1' style='margin-left: auto; margin-right: auto;'><tr><th>Input</th><th>Result</th></tr>";
+
+				for (let i = 1; i <= value; i++) {
+					htmlOut += "<tr><td>" + i + " x " + value + " </td><td> " + (i * value) + " </td></tr>";
+				}
+
+				htmlOut += "</table>";
+				$("theBody").innerHTML = htmlOut;
+			}
+		}
+	</script>
+</head>
+
+<body onload="TimesTables()" id="theBody">
+</body>
+
+</html>
