@@ -24,3 +24,35 @@ var generateMines = (x, y) => {
 
   numberBlocks;
 };
+
+var loopThroughMap = (cb) => {
+  for (var y = 0; y < height; y++) {
+    for (var x = 0; x < width; x++) {
+      cb(x, y, map[y][x]);
+    }
+  }
+};
+
+var numberBlocks = () => {
+  var number;
+  for (var y = 0; y < width; y++) {
+    for (var x = 0; x < width; x++) {
+      number = 0;
+
+      if (!map[y][x][3]) {
+        for (var i = y - 1; i <= y + 1; i++) {
+          for (var j = x - 1; j <= x + 1; j++) {
+            if (inMap(j, i)) {
+              if (!(i === y && j === x)) {
+                if (map[i][j][3]) {
+                  number++;
+                }
+              }
+            }
+          }
+        }
+        map[y][y][2] = number;
+      }
+    }
+  }
+};
