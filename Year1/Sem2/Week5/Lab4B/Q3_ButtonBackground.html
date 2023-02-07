@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Button Background</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <style>
+        html {
+            background-color: rgb(255, 255, 204);
+        }
+    </style>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        function changeBackground() {
+            let red = parseInt($("red").value);
+            let green = parseInt($("green").value);
+            let blue = parseInt($("blue").value);
+            console.log("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue);
+            if (isNaN(red) || isNaN(green) || isNaN(blue)) {
+                alert("The values entered must be numeric, please double check");
+            } else if (red > 255 || green > 255 || blue > 255) {
+                alert("Values are greater than 255, must be between 0 and 255");
+            } else if (red < 0 || green < 0 || blue < 0) {
+                alert("Values are greater than 255, must be between 0 and 255");
+            } else if (red < 0 || green < 0 || blue < 0) {
+                alert("Values are less than 0, must be between 0 and 255");
+            } else {
+                $("theArea").style.backgroundColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+            }
+        }
+
+        window.onload = function () {
+            $("changeBackground").onclick = function () { changeBackground(); }
+        }
+    </script>
+</head>
+
+<body class="w3-margin">
+    <h1 class="w3-center w3-teal">CSS Javascript Background Changer</h1>
+    <div class="w3-row">
+        <div class="w3-half w3-container ">
+            <table class="w3-table" style="width:50%">
+                <tr>
+                    <td>Red</td>
+                    <td><input type="text" id="red" /></td>
+                </tr>
+                <tr>
+                    <td>Green</td>
+                    <td><input type="text" id="green" /></td>
+                </tr>
+                <tr>
+                    <td>Blue</td>
+                    <td><input type="text" id="blue" /></td>
+                </tr>
+                <tr>
+                    <th colspan="2" style="text-align: center;">
+                        <button class="w3-button w3-block w3-teal" id="changeBackground">Change</button>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="w3-half w3-container w3-padding-right" id="theArea" style="height:175px; ">
+        </div>
+    </div>
+</body>
+
+</html>

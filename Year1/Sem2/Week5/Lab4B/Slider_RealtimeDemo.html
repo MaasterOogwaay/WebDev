@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sample Slider Demo</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<style>
+				html{ background-color: rgb(255,255,204);}
+		</style>
+    <script>
+        function showVal(value){
+            console.log(value)
+            document.getElementById("result").innerHTML = value;
+        }
+    </script>
+</head>
+<body class="w3-margin">
+    <h1 class="w3-center w3-teal">Slider Listener Demo</h1>
+    <p>Move the slider below and watch the values change.  The slider is set with a range of 0 to 255</p>
+    <p>
+        <input type="range" min="0"  value = "100" max="255" step="1"  oninput="showVal(this.value)" onchange="showVal(this.value)"/> 
+        Slider value = <span id="result">100</span>
+    </p>
+    <hr>
+    <p>The values are also displayed to the console.  Press Ctrl+Shift+j or F12 to show your console.</p>
+</body>
+</html>

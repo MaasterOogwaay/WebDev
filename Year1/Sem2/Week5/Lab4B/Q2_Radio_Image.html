@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Radio Image Swap</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <style>
+        html {
+            background-color: rgb(255, 255, 204);
+        }
+    </style>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+        function randomImage() {
+            let rand = Math.floor(Math.random() * 4) + 1; console.log("Random number = " + rand)
+            SwapImage(rand);
+            if (rand == 1) {
+                $("happy").checked = true;
+            }
+            if (rand == 2) {
+                $("hungry").checked = true;
+            }
+            if (rand == 3) {
+                $("sad").checked = true;
+            }
+            if (rand == 4) {
+                $("sleepy").checked = true;
+            }
+        }
+        function SwapImage(id) {
+            if (id == 1) {
+                console.log("happy");
+                $("theImage").src = "images/happy_Grogu.jpg";
+            }
+            if (id == 2) {
+                console.log("hungry");
+                $("theImage").src = "images/hungry_grogu.jpg";
+            }
+            if (id == 3) {
+                console.log("sad");
+                $("theImage").src = "images/sad_grogu.png";
+            }
+            if (id == 4) {
+                console.log("sleepy");
+                $("theImage").src = "images/sleepy_grogu.jpg";
+            }
+        }
+        window.onload = function () {
+            $("chooseMood").onclick = function () { randomImage(); }
+        }
+    </script>
+</head>
+
+<body class="w3-margin">
+    <h1 class="w3-center w3-teal">Radio Image Demo</h1>
+    <div class="w3-row">
+        <div class="w3-third w3-container">
+            <table class="w3-table" style="width:75%">
+                <tr>
+                    <th>Happy</th>
+                    <td><input type="radio" name="mood" id="happy" checked onclick="SwapImage(1)"></td>
+                </tr>
+                <tr>
+                    <th>Hungry</th>
+                    <td><input type="radio" name="mood" id="hungry" onclick="SwapImage(2)"></td>
+                </tr>
+                <tr>
+                    <th>Sad</th>
+                    <td><input type="radio" name="mood" id="sad" onclick="SwapImage(3)"></td>
+                </tr>
+                <tr>
+                    <th>Sleepy</th>
+                    <td><input type="radio" name="mood" id="sleepy" onclick="SwapImage(4)"></td>
+                </tr>
+                <tr>
+                    <th colspan="2" class="w3-center"> <button class="w3-button w3-block w3-black"
+                            id="chooseMood">Random</button>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="w3-twothird w3-center">
+            <img id="theImage" class="w3-image w3-black" src="images/happy_Grogu.jpg" />
+        </div>
+    </div>
+</body>
+
+</html>
