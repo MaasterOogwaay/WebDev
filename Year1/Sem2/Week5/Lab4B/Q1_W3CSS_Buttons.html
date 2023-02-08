@@ -22,18 +22,20 @@
             let lower = parseInt($("LLimit").value);
             let upper = parseInt($("ULimit").value);
             console.log("Lower Limit: " + lower + "\tUpper Limit: " + upper);
-            if (lower > upper)
+            if (lower > upper) {
                 $("output").innerHTML = "<h3 class='w3-red w3-center'>ERROR</h3>" + "<p>Your lower limit is greater than your upper limit</p>";
-            else if (lower == upper)
+            } else if (lower == upper) {
                 $("output").innerHTML = "<h3 class='w3-red w3-center'>ERROR</h3>" + "<p>Your lower limit and upper limit are the same value</p>";
-            else {
-                let rand = randomBetween(lower, upper);
-                $("output").innerHTML = "<h3 class='w3-center'>Random Number Generated</h3>" + "<p>Random number between " + lower + " and " + upper + " was " + rand;
+            } else {
+                let randNumber = randomBetween(lower, upper);
+                $("output").innerHTML = "<h3 class='w3-center'>Random Number Generated</h3>" + "<p>Random number between " + lower + " and " + upper + " was " + randNumber;
 
             }
         }
         window.onload = function () {
-            $("generateRandom").onclick = function () { newRandomNumber(); }
+            $("generateRandom").onclick = function () {
+                newRandomNumber();
+            }
         }
     </script>
 </head>

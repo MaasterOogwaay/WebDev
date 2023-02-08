@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://moodle.ait.ie/pluginfile.php/476618/mod_resource/content/0/hitEnter.html -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" type="image/x-icon" href="https://jsfractioncalcdemo.z6.web.core.windows.net/favicon.ico">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <title>Demo Enter Key Pressed</title>
+    <script>
+        //Global variable for the keystrokes
+        let keystrokes = "";
+        //Standard $ function to reduce code
+        function $(id) {
+            return document.getElementById(id);
+        }
+        // When the page has loaded wait for an event to occur
+        window.onload = function () {
+            //Hide the divs for the images
+            $("leftDiv").style.display = "none";
+            $("rightDiv").style.display = "none";
+
+            //If there is a keystroke then log the event and update the keystroke string
+            document.onkeydown = function (event) {
+                let key = event.key;
+                //Add the key pressed to the keystroke event
+                keystrokes += key;
+                
+                //Remove the Shift and backspace from the keystroke string
+                keystrokes = keystrokes.replace('Shift', '')
+                keystrokes = keystrokes.replace('Backspace', '')
+                //If the backspace key is pressed then remove the last character from the keystroke string
+                if (event.key === "Backspace") {
+                    keystrokes = keystrokes.slice(0, -1);
+                }
+                //if the g key is pressed then show the left div and update the image to get the image from the url
+                if (event.key === "g") {
+                    $("leftDiv").style.display = "block";
+                    $("leftPic").src = "https://lumiere-a.akamaihd.net/v1/images/grogu-main_5f0da847.jpeg?region=280%2C0%2C951%2C536";
+                }
+                //if the m key is pressed then show the right div and update the image to get the image from the url
+                if (event.key === "m") {
+                    $("rightDiv").style.display = "block";
+                    $("rightPic").src = "https://lumiere-a.akamaihd.net/v1/images/the-mandalorian-main_b842cedf.jpeg?region=0%2C0%2C1280%2C720";
+                }
+                //if the Enter key is pressed then open a browser window for the Web App Dev Module
+                if (event.key === "Enter") {
+                    // Cancel the default action, if needed
+                    event.preventDefault();
+                    window.open("https://moodle.ait.ie/course/view.php?id=6835", '_blank');
+                }
+                $("outputKey").innerHTML = "The key pressed was: " + keystrokes;
+                console.log(keystrokes);
+            }
+            //If the reset page button is clicked then reset the page
+            $("resetPage").onclick = function () {
+                console.log("Resetting page");
+                location.reload();
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 class="w3-center w3-purple">Key Pressed Event</h1>
+    <div class="w3-row w3-center"><button class="w3-button w3-black" id="resetPage">Reset Page</button></div>
+    <h2 class="w3-row">Instructions:</h2>
+    <ol class="w3-list">
+        <li>Open the browser console: Ctrl+Shift+I</li>
+        <li>Then click anywhere in the browser window</li>
+        <li>Start typing</li>
+        <li>Certain keystrokes will have different affects/actions</li>
+    </ol>
+    <h3 id="outputKey"></h3>
+    <h3 id="yourKeyStrokes"></h3>
+    <div class="w3-row">
+        <div class="w3-half w3-container" id="leftDiv" >
+            <img src="" alt="left picture" id="leftPic" class="w3-image">
+        </div>
+        <div class="w3-half w3-container" id="rightDiv">
+            <img src="" alt="right picture"  id="rightPic"  class="w3-image">
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -15,18 +15,18 @@
             return document.getElementById(id);
         }
         function randomImage() {
-            let rand = Math.floor(Math.random() * 4) + 1; console.log("Random number = " + rand)
-            SwapImage(rand);
-            if (rand == 1) {
+            let randNumber = Math.floor(Math.random() * 4) + 1; console.log("Random number = " + randNumber)
+            SwapImage(randNumber);
+            if (randNumber == 1) {
                 $("happy").checked = true;
             }
-            if (rand == 2) {
+            if (randNumber == 2) {
                 $("hungry").checked = true;
             }
-            if (rand == 3) {
+            if (randNumber == 3) {
                 $("sad").checked = true;
             }
-            if (rand == 4) {
+            if (randNumber == 4) {
                 $("sleepy").checked = true;
             }
         }
@@ -49,7 +49,9 @@
             }
         }
         window.onload = function () {
-            $("chooseMood").onclick = function () { randomImage(); }
+            $("chooseMood").onclick = function () {
+                randomImage();
+            }
         }
     </script>
 </head>

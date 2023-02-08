@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>W3CSS JavaScript Template Root</title>
+	<link rel="stylesheet" href="css/w3.css">
+	<script type="text/javascript" src="js/volumeCalculator.js"></script>
+</head>
+
+<body>
+	<h1 class="w3-green" style="text-align: center;">Volume Calculator</h1>
+	<table class="w3-half">
+		<tr>
+			<td>Height (cm)</td>
+			<td><input type="text" id="height"></td>
+		</tr>
+		<tr>
+			<td>Radius (cm)</td>
+			<td><input type="text" id="radius"></td>
+		</tr>
+		<tr>
+			<td>Volume (cm<sup>3</sup>)</td>
+			<td><input type="text" id="volume" disabled="disabled"></td>
+		</tr>
+		<tr>
+			<td><input type="button" id="reset" value="Reset"></td>
+			<td><input type="button" id="calculate" value="Calculate"></td>
+		</tr>
+	</table>
+	<div class="w3-half">
+		<img src="images/cylinder.jpg" alt="">
+	</div>
+	<h3 class="w3-bar w3-green w3-center" id="result">Your results will appear here!</h3>
+</body>
+
+</html>
