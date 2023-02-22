@@ -4,49 +4,103 @@
 <head>
 	<title>Volume Calculator</title>
 	<link rel="stylesheet" type="text/css" href="css/w3.css">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Baloo+Paaji|Open+Sans:300,300i,400,400i,600,600i,700,700i" />
+
 	<script type="text/javascript" src="jscripts/JSFile.js"></script>
+	<style>
+		body,
+		h1,
+		p {
+			font-family: "Baloo Paaji";
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
 </head>
 
 <body>
-	<h1 class="w3-row w3-center">Volume Calculator (cm<sup>3</sup>)</h1>
+	<div class="w3-row w3-center">
+		<h1 class="w3-row w3-center">Calculate Your Macros</h1>
+		<p>Find the perfect macro intake for you by using our calculator</p>
+	</div>
 	<hr />
 
 	<div class="w3-row w3-center">
-		<input class="w3-radio" type="radio" name="shape" id="tank" checked onclick="JSFile:SetFields(1)">Tank
-		<input class="w3-radio" type="radio" name="shape" id="cylinder" onclick="JSFile:SetFields(2)">Cylinder
-		<input class="w3-radio" type="radio" name="shape" id="sphere" onclick="JSFile:SetFields(3)">Sphere
+		<input class="w3-radio" type="radio" name="shape" id="macros" checked onclick="JSFile:SetFields(1)">Macros
+		<input class="w3-radio" type="radio" name="shape" id="bmi" onclick="JSFile:SetFields(2)">BMI
+		<input class="w3-radio" type="radio" name="shape" id="bodyFat" onclick="JSFile:SetFields(3)">Body Fat
 	</div>
 	<hr>
 
-	<table class=" w3-half">
+	<table class="w3-table-all w3-half">
+		<!-- Gender selection -->
 		<tr>
-			<td>Length (cm)</td>
-			<td><input type="text" id="length"></td>
+			<td>I'm a</td>
 		</tr>
 		<tr>
-			<td>Width (cm)</td>
-			<td><input type="text" id="width"></td>
+			<td id="maleGender" class=" w3-button w3-light-blue w3-round">Male</td>
+			<td id="femaleGender" class="w3-button w3-round">Female</td>
+		</tr>
+
+		<!-- Weight Goal -->
+		<tr>
+			<td>What is your main weight goal?</td>
 		</tr>
 		<tr>
-			<td>Height (cm)</td>
-			<td><input type="text" id="height"></td>
+			<td class="w3-button w3-round" id="loseWeightGoal">Lose weight</td>
+			<td class="w3-button w3-round w3-light-blue" id="maintainWeightGoal">Maintain weight</td>
+			<td class="w3-button w3-round" id="gainWeightGoal">Gain weight</td>
+		</tr>
+
+		<!-- Age selection -->
+		<tr>
+			<td id="ageTag">I am years old</td>
 		</tr>
 		<tr>
-			<td>Radius (cm)</td>
-			<td><input type="text" id="radius" disabled></td>
+			<td colspan="5"><input style="width: 100%;" type="range" min="18" value="100" max="100" step="1"
+					oninput="showAgeVal(this.value)"></td>
+		</tr>
+
+		<!-- Height selection -->
+		<tr>
+			<td id="heightTag">I am height tall</td>
 		</tr>
 		<tr>
-			<td><input type="button" id="reset" value="Reset"></td>
+			<td colspan="5"><input style="width: 100%;" type="range" min="121" value="100" max="213" step="1"
+					oninput="showHeightVal(this.value)"></td>
+		</tr>
+
+		<!-- Weight selection -->
+		<tr>
+			<td id="weightTag">I am weight kg</td>
+		</tr>
+		<tr>
+			<td colspan="5"><input style="width: 100%;" type="range" min="30" value="100" max="500" step="1"
+					oninput="showWeightVal(this.value)"></td>
+		</tr>
+
+		<!-- Acivity level -->
+		<tr>
+			<td>How active are you?</td>
+		</tr>
+		<tr>
+			<td class="w3-button w3-round" id="littleActivityLevel">Little - none</td>
+			<td class="w3-button w3-round w3-light-blue" id="lightlyActivityLevel">Lightly active</td>
+			<td class="w3-button w3-round" id="moderateActivityLevel">Moderately active</td>
+			<td class="w3-button w3-round" id="veryActivityLevel">Very active</td>
+			<td class="w3-button w3-round" id="extremelyActivityLevel">Extremely active</td>
+		</tr>
+
+		<tr>
 			<td><input type="button" id="calculate" value="Calculate"></td>
+			<td><input type="button" id="reset" value="Reset"></td>
 		</tr>
 	</table>
 	<div class="w3-half">
-		<img id="theImage" src="images/cube.jpg" title="cube">
+		<p id="resultPara">Results will go here</p>
 	</div>
 	<hr>
-	<p class="w3-bar" id="resultPara">Volume is the quantity of three-dimensional space enclosed by some closed
-		boundary, for example,
-		the space that a substance (solid, liquid, gas, or plasma) or shape occupies or contains</p>
 </body>
 
 </html>
