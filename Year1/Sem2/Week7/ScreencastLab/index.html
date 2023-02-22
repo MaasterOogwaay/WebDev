@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>Volume Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/w3.css">
+	<script type="text/javascript" src="jscripts/JSFile.js"></script>
+</head>
+
+<body>
+	<h1 class="w3-row w3-center">Volume Calculator (cm<sup>3</sup>)</h1>
+	<hr />
+
+	<div class="w3-row w3-center">
+		<input class="w3-radio" type="radio" name="shape" id="tank" checked onclick="JSFile:SetFields(1)">Tank
+		<input class="w3-radio" type="radio" name="shape" id="cylinder" onclick="JSFile:SetFields(2)">Cylinder
+		<input class="w3-radio" type="radio" name="shape" id="sphere" onclick="JSFile:SetFields(3)">Sphere
+	</div>
+	<hr>
+
+	<table class=" w3-half">
+		<tr>
+			<td>Length (cm)</td>
+			<td><input type="text" id="length"></td>
+		</tr>
+		<tr>
+			<td>Width (cm)</td>
+			<td><input type="text" id="width"></td>
+		</tr>
+		<tr>
+			<td>Height (cm)</td>
+			<td><input type="text" id="height"></td>
+		</tr>
+		<tr>
+			<td>Radius (cm)</td>
+			<td><input type="text" id="radius" disabled></td>
+		</tr>
+		<tr>
+			<td><input type="button" id="reset" value="Reset"></td>
+			<td><input type="button" id="calculate" value="Calculate"></td>
+		</tr>
+	</table>
+	<div class="w3-half">
+		<img id="theImage" src="images/cube.jpg" title="cube">
+	</div>
+	<hr>
+	<p class="w3-bar" id="resultPara">Volume is the quantity of three-dimensional space enclosed by some closed
+		boundary, for example,
+		the space that a substance (solid, liquid, gas, or plasma) or shape occupies or contains</p>
+</body>
+
+</html>
