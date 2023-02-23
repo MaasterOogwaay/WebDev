@@ -49,71 +49,78 @@ function calculateMacros() {
   var protein = 0;
   var fats = 0;
 
-  weight = weightValue;
-  height = heightValue;
-  age = ageValue;
+  // STEPS:
+  // 1. Calculate base BMR
+  // 2. Calculate daily BMR based on level of activity
+  // 3. Calculate macro split based on weight goal
 
-  if ("Male is Selected") {
+  if ($("gender").value == "Male") {
     BMR = 10 * weight + 6.25 * height - 5 * age + 5;
-    console.log("Base BMR = " + BMR);
+    console.log("Base BMR for male = " + BMR);
 
     // little - no activity
-    if ("little - none is selected") {
+    if ($("activityLevel").value == "Little - none") {
       BMR = BMR * littleNoneActivity;
-      console.log("Daily BMR =" + BMR);
-      if ("Lose weight is selected") {
+      console.log("Daily BMR for male, little - none activity =" + BMR);
+      if ($("weightGoal").value == "Lose weight") {
         console.log("Calculating macro split for male, little activity, weight loss");
         carbs = Math.ceil((BMR * 0.4) / 4);
         protein = Math.ceil((BMR * 0.4) / 4);
         fats = Math.ceil((BMR * 0.2) / 9);
+        console.log("RESULTS(Lose Weight): carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g");
 
-        $("resultPara").innerHTML = "carbs: " + carbs + " protein: " + protein + " fats: " + fats;
+        $("resultPara").innerHTML = "carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g";
       }
-      if ("Maintain weight is selected") {
+      if ($("weightGoal").value == "Maintain weight") {
         console.log("Calculating macro split for male, little activity, maintain weight");
         carbs = Math.ceil((BMR * 0.4) / 4);
         protein = Math.ceil((BMR * 0.3) / 4);
         fats = Math.ceil((BMR * 0.3) / 9);
+        console.log("RESULTS(Maintain weight): carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g");
 
-        $("resultPara").innerHTML = "carbs: " + carbs + " protein: " + protein + " fats: " + fats;
+        $("resultPara").innerHTML = "carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g";
       }
-      if ("Gain weight is selected") {
+      if ($("weightGoal").value == "Gain weight") {
         console.log("Calculating macro split for male, little activity, gain weight");
         carbs = Math.ceil((BMR * 0.4) / 4);
         protein = Math.ceil((BMR * 0.3) / 4);
         fats = Math.ceil((BMR * 0.3) / 9);
+        console.log("RESULTS(Gain weight): carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g");
 
-        $("resultPara").innerHTML = "carbs: " + carbs + " protein: " + protein + " fats: " + fats;
+        $("resultPara").innerHTML = "carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g";
       }
     }
 
     // light activity
-    if ("light activity is selected") {
+    if ($("activityLevel").value == "Lightly active") {
       BMR = BMR * lightActivity;
-      console.log("Daily BMR =" + BMR);
-      if ("Lose weight is selected") {
+      console.log("Daily BMR for male, lightly active =" + BMR);
+      if ($("weightGoal").value == "Lose weight") {
         console.log("Calculating macro split for male, light activity, weight loss");
         carbs = Math.ceil((BMR * 0.4) / 4);
         protein = Math.ceil((BMR * 0.4) / 4);
         fats = Math.ceil((BMR * 0.2) / 9);
+        console.log("RESULTS(Lose Weight): carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g");
 
-        $("resultPara").innerHTML = "carbs: " + carbs + " protein: " + protein + " fats: " + fats;
+        $("resultPara").innerHTML = "carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g";
       }
-      if ("Maintain weight is selected") {
+      if ($("weightGoal").value == "Maintain weight") {
         console.log("Calculating macro split for male, light activity, maintain weight");
         carbs = Math.ceil((BMR * 0.4) / 4);
         protein = Math.ceil((BMR * 0.3) / 4);
         fats = Math.ceil((BMR * 0.3) / 9);
+        console.log("RESULTS(Maintain Weight): carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g");
 
-        $("resultPara").innerHTML = "carbs: " + carbs + " protein: " + protein + " fats: " + fats;
+        $("resultPara").innerHTML = "carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g";
       }
-      if ("Gain weight is selected") {
+      if ($("weightGoal").value == "Gain weight") {
         console.log("Calculating macro split for male, light activity, gain weight");
         carbs = Math.ceil((BMR * 0.4) / 4);
         protein = Math.ceil((BMR * 0.3) / 4);
         fats = Math.ceil((BMR * 0.3) / 9);
+        console.log("RESULTS(Gain Weight): carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g");
 
-        $("resultPara").innerHTML = "carbs: " + carbs + " protein: " + protein + " fats: " + fats;
+        $("resultPara").innerHTML = "carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g";
       }
     }
   }
@@ -128,19 +135,23 @@ function calculate() {
   /*This function checks to see what radio-button is selected and then
 	calls the appropriate function.  For example if the Macro Calculator is checked the calculateMacros
 	function is called.*/
+  calculateMacros();
 }
 
 function showAgeVal(ageValue) {
   console.log(ageValue);
+  age = ageValue;
   $("ageTag").innerHTML = "I am " + ageValue + " years old";
 }
 
 function showHeightVal(heightValue) {
   console.log(heightValue);
+  height = heightValue;
   $("heightTag").innerHTML = "I am " + heightValue + "cm tall";
 }
 
 function showWeightVal(weightValue) {
   console.log(weightValue);
+  weight = weightValue;
   $("weightTag").innerHTML = "I am " + weightValue + "kg";
 }

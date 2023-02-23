@@ -36,26 +36,36 @@
 	<table class="w3-table-all w3-half">
 		<!-- Gender selection -->
 		<tr>
-			<td>I'm a</td>
+			<td colspan="2">I'm a</td>
 		</tr>
 		<tr>
-			<td id="maleGender" class=" w3-button w3-light-blue w3-round">Male</td>
-			<td id="femaleGender" class="w3-button w3-round">Female</td>
+			<td>
+				<input class="w3-button w3-round" type="button" id="gender" value="Male">
+			</td>
+			<td>
+				<input class="w3-button w3-round" type="button" id="gender" value="Female">
+			</td>
 		</tr>
 
 		<!-- Weight Goal -->
 		<tr>
-			<td>What is your main weight goal?</td>
+			<td colspan="2">What is your main weight goal?</td>
 		</tr>
 		<tr>
-			<td class="w3-button w3-round" id="loseWeightGoal">Lose weight</td>
-			<td class="w3-button w3-round w3-light-blue" id="maintainWeightGoal">Maintain weight</td>
-			<td class="w3-button w3-round" id="gainWeightGoal">Gain weight</td>
+			<td>
+				<input class="w3-button w3-round" type="button" id="weightGoal" value="Lose weight">
+			</td>
+			<td>
+				<input class="w3-button w3-round" type="button" id="weightGoal" value="Maintain weight">
+			</td>
+			<td>
+				<input class="w3-button w3-round" type="button" id="weightGoal" value="Gain weight">
+			</td>
 		</tr>
 
 		<!-- Age selection -->
 		<tr>
-			<td id="ageTag">I am years old</td>
+			<td colspan="2" id="ageTag">I am years old</td>
 		</tr>
 		<tr>
 			<td colspan="5"><input style="width: 100%;" type="range" min="18" value="100" max="100" step="1"
@@ -64,7 +74,7 @@
 
 		<!-- Height selection -->
 		<tr>
-			<td id="heightTag">I am height tall</td>
+			<td colspan="2" id="heightTag">I am height tall</td>
 		</tr>
 		<tr>
 			<td colspan="5"><input style="width: 100%;" type="range" min="121" value="100" max="213" step="1"
@@ -73,7 +83,7 @@
 
 		<!-- Weight selection -->
 		<tr>
-			<td id="weightTag">I am weight kg</td>
+			<td colspan="2" id="weightTag">I am weight kg</td>
 		</tr>
 		<tr>
 			<td colspan="5"><input style="width: 100%;" type="range" min="30" value="100" max="500" step="1"
@@ -82,14 +92,24 @@
 
 		<!-- Acivity level -->
 		<tr>
-			<td>How active are you?</td>
+			<td colspan="2">How active are you?</td>
 		</tr>
 		<tr>
-			<td class="w3-button w3-round" id="littleActivityLevel">Little - none</td>
-			<td class="w3-button w3-round w3-light-blue" id="lightlyActivityLevel">Lightly active</td>
-			<td class="w3-button w3-round" id="moderateActivityLevel">Moderately active</td>
-			<td class="w3-button w3-round" id="veryActivityLevel">Very active</td>
-			<td class="w3-button w3-round" id="extremelyActivityLevel">Extremely active</td>
+			<td>
+				<input class="w3-button w3-round" type="button" id="activityLevel" value="Little - none">
+			</td>
+			<td>
+				<input class="w3-button w3-round" type="button" id="activityLevel" value="Lightly active">
+			</td>
+			<td>
+				<input class="w3-button w3-round" type="button" id="activityLevel" value="Moderately active">
+			</td>
+			<td>
+				<input class="w3-button w3-round" type="button" id="activityLevel" value="Very active">
+			</td>
+			<td>
+				<input class="w3-button w3-round" type="button" id="activityLevel" value="Extremely active">
+			</td>
 		</tr>
 
 		<tr>
