@@ -16,6 +16,10 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+
+		input[type=radio]:checked+label {
+			background: red;
+		}
 	</style>
 </head>
 
@@ -27,7 +31,28 @@
 	<hr />
 
 	<div class="w3-row w3-center">
-		<input class="w3-radio" type="radio" name="shape" id="macros" checked onclick="JSFile:SetFields(1)">Macros
+
+		<!-- <div class="w3-button w3-round">
+			<label for="macros">Macros</label>
+			<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio" name="calculator"
+				value="macros" id="macros">
+		</div>
+
+		<div class="w3-button w3-round">
+			<label for="bmi">BMI</label>
+			<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio" name="calculator"
+				value="bmi" id="bmi">
+		</div>
+
+		<div class="w3-button w3-round">
+			<label for="bodyFat">Body Fat</label>
+			<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio" name="calculator"
+				value="bodyFat" id="bodyFat">
+		</div> -->
+
+
+		<input class="w3-radio" type="radio" name="shape" id="macros" checked
+			onclick="JSFile:SetFields(1)">Macros
 		<input class="w3-radio" type="radio" name="shape" id="bmi" onclick="JSFile:SetFields(2)">BMI
 		<input class="w3-radio" type="radio" name="shape" id="bodyFat" onclick="JSFile:SetFields(3)">Body Fat
 	</div>
@@ -40,10 +65,18 @@
 		</tr>
 		<tr>
 			<td>
-				<input class="w3-button w3-round" type="button" id="gender" value="Male">
+				<div class="w3-button w3-round">
+					<label for="male">Male</label>
+					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio" name="gender"
+						value="Male" id="male">
+				</div>
 			</td>
 			<td>
-				<input class="w3-button w3-round" type="button" id="gender" value="Female">
+				<div class="w3-button w3-round">
+					<label for="female">Female</label>
+					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio" name="gender"
+						value="Female" id="female">
+				</div>
 			</td>
 		</tr>
 
@@ -53,13 +86,29 @@
 		</tr>
 		<tr>
 			<td>
-				<input class="w3-button w3-round" type="button" id="weightGoal" value="Lose weight">
+				<div class="w3-button w3-round">
+					<label for="Lose weight">Lose weight</label>
+					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+						name="weightGoal" value="Lose weight" id="Lose weight">
+				</div>
+
+				<!-- <input class="w3-button w3-round" type="button" id="weightGoal" value="Lose weight"> -->
 			</td>
 			<td>
-				<input class="w3-button w3-round" type="button" id="weightGoal" value="Maintain weight">
+				<div class="w3-button w3-round">
+					<label for="Maintain weight">Maintain weight</label>
+					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+						name="weightGoal" value="Maintain weight" id="Maintain weight">
+				</div>
+				<!-- <input class="w3-button w3-round" type="button" id="weightGoal" value="Maintain weight"> -->
 			</td>
 			<td>
-				<input class="w3-button w3-round" type="button" id="weightGoal" value="Gain weight">
+				<div class="w3-button w3-round">
+					<label for="Gain weight">Gain weight</label>
+					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+						name="weightGoal" value="Gain weight" id="Gain weight">
+				</div>
+				<!-- <input class="w3-button w3-round" type="button" id="weightGoal" value="Gain weight"> -->
 			</td>
 		</tr>
 
@@ -68,7 +117,7 @@
 			<td colspan="2" id="ageTag">I am years old</td>
 		</tr>
 		<tr>
-			<td colspan="5"><input style="width: 100%;" type="range" min="18" value="100" max="100" step="1"
+			<td colspan="5"><input style="width: 100%;" type="range" min="18" value="20" max="100" step="1"
 					oninput="showAgeVal(this.value)"></td>
 		</tr>
 
@@ -96,25 +145,50 @@
 		</tr>
 		<tr>
 			<td>
-				<input class="w3-button w3-round" type="button" id="activityLevel" value="Little - none">
+				<div class="w3-button w3-round">
+					<label for="Little - none">Little - none</label>
+					<input style="opacity: 0; position: fixed;" type="radio" name="activityLevel" value="Little - none"
+						id="Little - none">
+				</div>
 			</td>
 			<td>
-				<input class="w3-button w3-round" type="button" id="activityLevel" value="Lightly active">
+				<div class="w3-button w3-round">
+					<label for="Lightly active">Lightly active</label>
+					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+						name="activityLevel" value="Lightly active" id="Lightly active">
+				</div>
 			</td>
 			<td>
-				<input class="w3-button w3-round" type="button" id="activityLevel" value="Moderately active">
+				<div class="w3-button w3-round">
+					<label for="Moderately active">Moderately active</label>
+					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+						name="activityLevel" value="Moderately active" id="Moderately active">
+				</div>
 			</td>
 			<td>
-				<input class="w3-button w3-round" type="button" id="activityLevel" value="Very active">
+				<div class="w3-button w3-round">
+					<label for="Very active">Very active</label>
+					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+						name="activityLevel" value="Very active" id="Very active">
+				</div>
 			</td>
 			<td>
-				<input class="w3-button w3-round" type="button" id="activityLevel" value="Extremely active">
+				<div class="w3-button w3-round">
+					<label for="Extremely active">Extremely active</label>
+					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+						name="activityLevel" value="Extremely active" id="Extremely active">
+				</div>
 			</td>
 		</tr>
 
 		<tr>
-			<td><input type="button" id="calculate" value="Calculate"></td>
-			<td><input type="button" id="reset" value="Reset"></td>
+			<td>
+				<div class="w3-button w3-round w3-light-blue">
+					<label for="Calculate">Calculate</label>
+					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio" name="calculate"
+						value="Calculate" id="Calculate">
+				</div>
+			</td>
 		</tr>
 	</table>
 	<div class="w3-half">
