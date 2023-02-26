@@ -113,9 +113,15 @@ function calculateMacros() {
 }
 function calculateBMI() {
   /* NEED TO ADD COMMENTS */
+  // Formula: weight (kg) / [height (m)]^2
+  //   The formula for BMI is weight in kilograms divided by height in meters squared. If height has been measured in centimeters, divide by 100 to convert this to meters.
 }
 function calculateBodyFat() {
   /* NEED TO ADD COMMENTS */
+  // Body fat percentage (BFP) formula for adult males:
+  //   BFP = 1.20 × BMI + 0.23 × Age - 16.2
+  // Body fat percentage (BFP) formula for adult females:
+  //   BFP = 1.20 × BMI + 0.23 × Age - 5.4
 }
 function calculate() {
   /*This function checks to see what radio-button is selected and then
