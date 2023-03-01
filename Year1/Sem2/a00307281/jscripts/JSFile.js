@@ -1,11 +1,16 @@
 // TODO
 // Figure out how to decipher which button is selected (DONE)
 // Fix the buttons in HTML (DONE)
-// Macro calculator for rest of males and all females
+// Macro calculator for rest of males and all females (DONE)
 // BMI calculator
 // Body fat calculator
 // Change id's of everything || create global variables (OBSELETE)
 // Change cells to be like HTML line 100 (DONE)
+// updateLabel function - look at PlotlyDemo (DONE)
+
+// Plotly
+// - Take 3 macro values
+// - .push() them into an array
 
 var weight = 0;
 var height = 0;
@@ -146,4 +151,80 @@ function showWeightVal(weightValue) {
   console.log(weightValue);
   weight = weightValue;
   $("weightTag").innerHTML = "I am " + weightValue + "kg";
+}
+
+function updateLabel(radioID) {
+  // Gender Select
+  if (radioID == 1) {
+    console.log("Male gender selected");
+    $("maleGenderLabel").classList.add("w3-teal");
+    $("femaleGenderLabel").classList.remove("w3-teal");
+  }
+  if (radioID == 2) {
+    console.log("Female gender selected");
+    $("maleGenderLabel").classList.remove("w3-teal");
+    $("femaleGenderLabel").classList.add("w3-teal");
+  }
+
+  // Weight Goal Select
+  if (radioID == 3) {
+    console.log("Lose weight goal selected");
+    $("loseWeightLabel").classList.add("w3-teal");
+    $("maintainWeightLabel").classList.remove("w3-teal");
+    $("gainWeightLabel").classList.remove("w3-teal");
+  }
+  if (radioID == 4) {
+    console.log("Maintain weight goal selected");
+    $("loseWeightLabel").classList.remove("w3-teal");
+    $("maintainWeightLabel").classList.add("w3-teal");
+    $("gainWeightLabel").classList.remove("w3-teal");
+  }
+  if (radioID == 5) {
+    console.log("Gain weight goal selected");
+    $("loseWeightLabel").classList.remove("w3-teal");
+    $("maintainWeightLabel").classList.remove("w3-teal");
+    $("gainWeightLabel").classList.add("w3-teal");
+  }
+
+  // Activity Level Select
+  if (radioID == 6) {
+    console.log("Little - None activity level selected");
+    $("littleNoneActivityLabel").classList.add("w3-teal");
+    $("lightlyActivityLabel").classList.remove("w3-teal");
+    $("moderatelyAcitivityLabel").classList.remove("w3-teal");
+    $("veryActivityLabel").classList.remove("w3-teal");
+    $("extremelyActivityLabel").classList.remove("w3-teal");
+  }
+  if (radioID == 7) {
+    console.log("Lightly activity level selected");
+    $("littleNoneActivityLabel").classList.remove("w3-teal");
+    $("lightlyActivityLabel").classList.add("w3-teal");
+    $("moderatelyAcitivityLabel").classList.remove("w3-teal");
+    $("veryActivityLabel").classList.remove("w3-teal");
+    $("extremelyActivityLabel").classList.remove("w3-teal");
+  }
+  if (radioID == 8) {
+    console.log("Moderately activity level selected");
+    $("littleNoneActivityLabel").classList.remove("w3-teal");
+    $("lightlyActivityLabel").classList.remove("w3-teal");
+    $("moderatelyAcitivityLabel").classList.add("w3-teal");
+    $("veryActivityLabel").classList.remove("w3-teal");
+    $("extremelyActivityLabel").classList.remove("w3-teal");
+  }
+  if (radioID == 9) {
+    console.log("Very activity level selected");
+    $("littleNoneActivityLabel").classList.remove("w3-teal");
+    $("lightlyActivityLabel").classList.remove("w3-teal");
+    $("moderatelyAcitivityLabel").classList.remove("w3-teal");
+    $("veryActivityLabel").classList.add("w3-teal");
+    $("extremelyActivityLabel").classList.remove("w3-teal");
+  }
+  if (radioID == 10) {
+    console.log("Extremely level selected");
+    $("littleNoneActivityLabel").classList.remove("w3-teal");
+    $("lightlyActivityLabel").classList.remove("w3-teal");
+    $("moderatelyAcitivityLabel").classList.remove("w3-teal");
+    $("veryActivityLabel").classList.remove("w3-teal");
+    $("extremelyActivityLabel").classList.add("w3-teal");
+  }
 }
