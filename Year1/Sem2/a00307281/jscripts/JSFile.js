@@ -7,14 +7,14 @@
 // Change id's of everything || create global variables (OBSELETE)
 // Change cells to be like HTML line 100 (DONE)
 // updateLabel function - look at PlotlyDemo (DONE)
-
-// Plotly
-// - Take 3 macro values
-// - .push() them into an array
+// Plotly (DONE)
 
 var weight = 0;
 var height = 0;
 var age = 0;
+var carbs = 0;
+var protein = 0;
+var fats = 0;
 
 var $ = function (id) {
   return document.getElementById(id);
@@ -22,6 +22,7 @@ var $ = function (id) {
 window.onload = function () {
   $("Calculate").onclick = function () {
     calculate();
+    genPieChart();
   };
 };
 
@@ -29,12 +30,26 @@ function SetFields(id) {
   /*This function takes an id which is an integer as a parameter.
 	This is parameter is passed from the radio buttons in the HTML file.
   e.g If the id is 1, then the Macros calculator is shown*/
+  if (id == 1) {
+    // $("width").disabled = false;
+    // $("length").disabled = false;
+    // $("height").disabled = false;
+    // $("radius").disabled = true;
+    // $("theImage").src = "images/cube.jpg";
+    document.title = "Macro Calculator";
+  }
+  if (id == 2) {
+    document.title = "BMI Calculator";
+  }
+  if (id == 3) {
+    document.title = "Body Fat Calculator";
+  }
 }
 
 function displayWeightActivity(BMR) {
-  var carbs = 0;
-  var protein = 0;
-  var fats = 0;
+  // var carbs = 0;
+  // var protein = 0;
+  // var fats = 0;
   var genderValue = document.querySelector("input[type=radio][name=gender]:checked").value;
   var weightGoalValue = document.querySelector("input[type=radio][name=weightGoal]:checked").value;
   var activityLevelValue = document.querySelector("input[type=radio][name=activityLevel]:checked").value;
@@ -227,4 +242,27 @@ function updateLabel(radioID) {
     $("veryActivityLabel").classList.remove("w3-teal");
     $("extremelyActivityLabel").classList.add("w3-teal");
   }
+}
+
+function genPieChart() {
+  $("plotArea").innerHTML = "";
+  let xArray = "Carbs, Protein, Fats".split(", ");
+  let yArray = [carbs, protein, fats];
+  console.log("X data: " + xArray);
+  console.log("Y data: " + yArray);
+  // Define Data
+  var data = [
+    {
+      labels: xArray,
+      values: yArray,
+      type: "pie",
+    },
+  ];
+  // Define Layout
+  var layout = {
+    title: "Results",
+    titlefont: { size: 30, color: "red" },
+  };
+  // Display using Plotly
+  Plotly.newPlot("plotArea", data, layout);
 }

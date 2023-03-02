@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
-	<title>Volume Calculator</title>
+	<title>Macro Calculator</title>
 	<link rel="stylesheet" type="text/css" href="css/w3.css">
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Baloo+Paaji|Open+Sans:300,300i,400,400i,600,600i,700,700i" />
 
 	<script type="text/javascript" src="jscripts/JSFile.js"></script>
+	<script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
 	<style>
 		body,
 		h1,
@@ -31,29 +32,10 @@
 	<hr />
 
 	<div class="w3-row w3-center">
-
-		<!-- <div class="w3-button w3-round">
-			<label for="macros">Macros</label>
-			<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio" name="calculator"
-				value="macros" id="macros">
-		</div>
-
-		<div class="w3-button w3-round">
-			<label for="bmi">BMI</label>
-			<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio" name="calculator"
-				value="bmi" id="bmi">
-		</div>
-
-		<div class="w3-button w3-round">
-			<label for="bodyFat">Body Fat</label>
-			<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio" name="calculator"
-				value="bodyFat" id="bodyFat">
-		</div> -->
-
-
-		<input class="w3-radio" type="radio" name="shape" id="macros" checked onclick="JSFile:SetFields(1)">Macros
-		<input class="w3-radio" type="radio" name="shape" id="bmi" onclick="JSFile:SetFields(2)">BMI
-		<input class="w3-radio" type="radio" name="shape" id="bodyFat" onclick="JSFile:SetFields(3)">Body Fat
+		<input class="w3-radio" type="radio" name="calculatorType" id="macros" checked
+			onclick="JSFile:SetFields(1)">Macros
+		<input class="w3-radio" type="radio" name="calculatorType" id="bmi" onclick="JSFile:SetFields(2)">BMI
+		<input class="w3-radio" type="radio" name="calculatorType" id="bodyFat" onclick="JSFile:SetFields(3)">Body Fat
 	</div>
 	<hr>
 
@@ -193,6 +175,7 @@
 		</tr>
 	</table>
 	<div class="w3-half">
+		<div class="w3-center" id="plotArea"></div>
 		<p id="resultPara">Results will go here</p>
 	</div>
 	<hr>
