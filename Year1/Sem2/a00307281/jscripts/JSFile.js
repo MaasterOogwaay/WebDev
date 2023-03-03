@@ -172,75 +172,75 @@ function updateLabel(radioID) {
   // Gender Select
   if (radioID == 1) {
     console.log("Male gender selected");
-    $("maleGenderLabel").classList.add("w3-teal");
-    $("femaleGenderLabel").classList.remove("w3-teal");
+    $("maleGenderLabel").classList.add("w3-blue");
+    $("femaleGenderLabel").classList.remove("w3-blue");
   }
   if (radioID == 2) {
     console.log("Female gender selected");
-    $("maleGenderLabel").classList.remove("w3-teal");
-    $("femaleGenderLabel").classList.add("w3-teal");
+    $("maleGenderLabel").classList.remove("w3-blue");
+    $("femaleGenderLabel").classList.add("w3-blue");
   }
 
   // Weight Goal Select
   if (radioID == 3) {
     console.log("Lose weight goal selected");
-    $("loseWeightLabel").classList.add("w3-teal");
-    $("maintainWeightLabel").classList.remove("w3-teal");
-    $("gainWeightLabel").classList.remove("w3-teal");
+    $("loseWeightLabel").classList.add("w3-blue");
+    $("maintainWeightLabel").classList.remove("w3-blue");
+    $("gainWeightLabel").classList.remove("w3-blue");
   }
   if (radioID == 4) {
     console.log("Maintain weight goal selected");
-    $("loseWeightLabel").classList.remove("w3-teal");
-    $("maintainWeightLabel").classList.add("w3-teal");
-    $("gainWeightLabel").classList.remove("w3-teal");
+    $("loseWeightLabel").classList.remove("w3-blue");
+    $("maintainWeightLabel").classList.add("w3-blue");
+    $("gainWeightLabel").classList.remove("w3-blue");
   }
   if (radioID == 5) {
     console.log("Gain weight goal selected");
-    $("loseWeightLabel").classList.remove("w3-teal");
-    $("maintainWeightLabel").classList.remove("w3-teal");
-    $("gainWeightLabel").classList.add("w3-teal");
+    $("loseWeightLabel").classList.remove("w3-blue");
+    $("maintainWeightLabel").classList.remove("w3-blue");
+    $("gainWeightLabel").classList.add("w3-blue");
   }
 
   // Activity Level Select
   if (radioID == 6) {
     console.log("Little - None activity level selected");
-    $("littleNoneActivityLabel").classList.add("w3-teal");
-    $("lightlyActivityLabel").classList.remove("w3-teal");
-    $("moderatelyAcitivityLabel").classList.remove("w3-teal");
-    $("veryActivityLabel").classList.remove("w3-teal");
-    $("extremelyActivityLabel").classList.remove("w3-teal");
+    $("littleNoneActivityLabel").classList.add("w3-blue");
+    $("lightlyActivityLabel").classList.remove("w3-blue");
+    $("moderatelyAcitivityLabel").classList.remove("w3-blue");
+    $("veryActivityLabel").classList.remove("w3-blue");
+    $("extremelyActivityLabel").classList.remove("w3-blue");
   }
   if (radioID == 7) {
     console.log("Lightly activity level selected");
-    $("littleNoneActivityLabel").classList.remove("w3-teal");
-    $("lightlyActivityLabel").classList.add("w3-teal");
-    $("moderatelyAcitivityLabel").classList.remove("w3-teal");
-    $("veryActivityLabel").classList.remove("w3-teal");
-    $("extremelyActivityLabel").classList.remove("w3-teal");
+    $("littleNoneActivityLabel").classList.remove("w3-blue");
+    $("lightlyActivityLabel").classList.add("w3-blue");
+    $("moderatelyAcitivityLabel").classList.remove("w3-blue");
+    $("veryActivityLabel").classList.remove("w3-blue");
+    $("extremelyActivityLabel").classList.remove("w3-blue");
   }
   if (radioID == 8) {
     console.log("Moderately activity level selected");
-    $("littleNoneActivityLabel").classList.remove("w3-teal");
-    $("lightlyActivityLabel").classList.remove("w3-teal");
-    $("moderatelyAcitivityLabel").classList.add("w3-teal");
-    $("veryActivityLabel").classList.remove("w3-teal");
-    $("extremelyActivityLabel").classList.remove("w3-teal");
+    $("littleNoneActivityLabel").classList.remove("w3-blue");
+    $("lightlyActivityLabel").classList.remove("w3-blue");
+    $("moderatelyAcitivityLabel").classList.add("w3-blue");
+    $("veryActivityLabel").classList.remove("w3-blue");
+    $("extremelyActivityLabel").classList.remove("w3-blue");
   }
   if (radioID == 9) {
     console.log("Very activity level selected");
-    $("littleNoneActivityLabel").classList.remove("w3-teal");
-    $("lightlyActivityLabel").classList.remove("w3-teal");
-    $("moderatelyAcitivityLabel").classList.remove("w3-teal");
-    $("veryActivityLabel").classList.add("w3-teal");
-    $("extremelyActivityLabel").classList.remove("w3-teal");
+    $("littleNoneActivityLabel").classList.remove("w3-blue");
+    $("lightlyActivityLabel").classList.remove("w3-blue");
+    $("moderatelyAcitivityLabel").classList.remove("w3-blue");
+    $("veryActivityLabel").classList.add("w3-blue");
+    $("extremelyActivityLabel").classList.remove("w3-blue");
   }
   if (radioID == 10) {
     console.log("Extremely level selected");
-    $("littleNoneActivityLabel").classList.remove("w3-teal");
-    $("lightlyActivityLabel").classList.remove("w3-teal");
-    $("moderatelyAcitivityLabel").classList.remove("w3-teal");
-    $("veryActivityLabel").classList.remove("w3-teal");
-    $("extremelyActivityLabel").classList.add("w3-teal");
+    $("littleNoneActivityLabel").classList.remove("w3-blue");
+    $("lightlyActivityLabel").classList.remove("w3-blue");
+    $("moderatelyAcitivityLabel").classList.remove("w3-blue");
+    $("veryActivityLabel").classList.remove("w3-blue");
+    $("extremelyActivityLabel").classList.add("w3-blue");
   }
 }
 
