@@ -82,6 +82,7 @@ function displayWeightActivity(BMR) {
     console.log("RESULTS(Gain weight): carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g");
 
     $("resultPara").innerHTML = "carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g";
+    $("carbsMacroCardValue").innerHTML = "TEST"+carbs + "g";
   }
 }
 
