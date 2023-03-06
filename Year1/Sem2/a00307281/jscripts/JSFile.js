@@ -47,12 +47,25 @@ function SetFields(id) {
 }
 
 function displayWeightActivity(BMR) {
-  // var carbs = 0;
-  // var protein = 0;
-  // var fats = 0;
-  var genderValue = document.querySelector("input[type=radio][name=gender]:checked").value;
-  var weightGoalValue = document.querySelector("input[type=radio][name=weightGoal]:checked").value;
-  var activityLevelValue = document.querySelector("input[type=radio][name=activityLevel]:checked").value;
+  var genderValue = document.querySelector("input[type=radio][name=gender]:checked")?.value;
+  var weightGoalValue = document.querySelector("input[type=radio][name=weightGoal]:checked")?.value;
+  var activityLevelValue = document.querySelector("input[type=radio][name=activityLevel]:checked")?.value;
+
+  if (genderValue) {
+    console.log("Gender was selected");
+  } else {
+    alert("Gender wasn't selected");
+  }
+  if (weightGoalValue) {
+    console.log("Weight Goal was selected");
+  } else {
+    alert("Weight Goal wasn't selected");
+  }
+  if (activityLevelValue) {
+    console.log("Activity Level was selected");
+  } else {
+    alert("Activity Level wasn't selected");
+  }
 
   if (weightGoalValue == "Lose weight") {
     console.log(`Calculating macro split for ${genderValue}, ${activityLevelValue}, ${weightGoalValue}`);
@@ -60,8 +73,7 @@ function displayWeightActivity(BMR) {
     protein = Math.ceil((BMR * 0.4) / 4);
     fats = Math.ceil((BMR * 0.2) / 9);
     console.log("RESULTS(Lose Weight): carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g");
-
-    $("resultPara").innerHTML = "carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g";
+    changeMacroCardValues();
   }
 
   if (weightGoalValue == "Maintain weight") {
@@ -70,8 +82,7 @@ function displayWeightActivity(BMR) {
     protein = Math.ceil((BMR * 0.3) / 4);
     fats = Math.ceil((BMR * 0.3) / 9);
     console.log("RESULTS(Maintain weight): carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g");
-
-    $("resultPara").innerHTML = "carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g";
+    changeMacroCardValues();
   }
 
   if (weightGoalValue == "Gain weight") {
@@ -80,10 +91,15 @@ function displayWeightActivity(BMR) {
     protein = Math.ceil((BMR * 0.3) / 4);
     fats = Math.ceil((BMR * 0.3) / 9);
     console.log("RESULTS(Gain weight): carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g");
-
-    $("resultPara").innerHTML = "carbs: " + carbs + "g protein: " + protein + "g fats: " + fats + "g";
-    $("carbsMacroCardValue").innerHTML = "TEST"+carbs + "g";
+    changeMacroCardValues();
   }
+}
+
+function changeMacroCardValues() {
+  // Updates the cards with the macro values
+  $("carbsMacroCardValue").innerHTML = carbs + "g";
+  $("proteinMacroCardValue").innerHTML = protein + "g";
+  $("fatsMacroCardValue").innerHTML = fats + "g";
 }
 
 function calculateMacros() {
@@ -111,12 +127,24 @@ function calculateMacros() {
   // 2. Calculate daily BMR based on level of activity
   // 3. Calculate macro split based on weight goal
 
-  var genderValue = document.querySelector("input[type=radio][name=gender]:checked").value;
+  // ? - gimme .value but no error if null
+  var genderValue = document.querySelector("input[type=radio][name=gender]:checked")?.value;
+  if (genderValue) {
+    console.log("Gender was selected");
+  } else {
+    return alert("Gender wasn't selected");
+  }
+
   if (genderValue == "Male") {
     BMR = 10 * weight + 6.25 * height - 5 * age + 5;
     console.log(`Base BMR for ${genderValue} = ${BMR}`);
 
-    var activityLevelValue = document.querySelector("input[type=radio][name=activityLevel]:checked").value;
+    var activityLevelValue = document.querySelector("input[type=radio][name=activityLevel]:checked")?.value;
+    if (activityLevelValue) {
+      console.log("Activity Level was selected");
+    } else {
+      return alert("Activity Level wasn't selected");
+    }
     BMR = BMR * activityMultiplier[activityLevelValue];
     console.log(`Daily BMR for ${genderValue}, ${activityLevelValue} activity = ${BMR}`);
     displayWeightActivity(BMR);
@@ -127,6 +155,11 @@ function calculateMacros() {
     console.log(`Base BMR for ${genderValue} = ${BMR}`);
 
     var activityLevelValue = document.querySelector("input[type=radio][name=activityLevel]:checked").value;
+    if (activityLevelValue) {
+      console.log("Activity Level was selected");
+    } else {
+      return alert("Activity Level wasn't selected");
+    }
     BMR = BMR * activityMultiplier[activityLevelValue];
     console.log(`Daily BMR for ${genderValue}, ${activityLevelValue} activity = ${BMR}`);
     displayWeightActivity(BMR);

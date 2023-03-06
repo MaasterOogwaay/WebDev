@@ -39,178 +39,182 @@
 	</div>
 	<hr>
 
-	<table class="w3-table-all w3-half">
-		<!-- Gender selection -->
-		<tr>
-			<td colspan="2">I'm a</td>
-		</tr>
-		<tr>
-			<td>
-				<div id="maleGenderLabel" class="w3-button w3-round">
-					<label for="male">Male</label>
-					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio" name="gender"
-						value="Male" id="male" onclick="JSFile:updateLabel(1)">
-				</div>
-			</td>
-			<td>
-				<div id="femaleGenderLabel" class="w3-button w3-round">
-					<label for="female">Female</label>
-					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio" name="gender"
-						value="Female" id="female" onclick="JSFile:updateLabel(2)">
-				</div>
-			</td>
-		</tr>
 
-		<!-- Weight Goal -->
-		<tr>
-			<td colspan="2">What is your main weight goal?</td>
-		</tr>
-		<tr>
-			<td>
-				<div class="w3-button w3-round" id="loseWeightLabel">
-					<label for="Lose weight">Lose weight</label>
-					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
-						name="weightGoal" value="Lose weight" id="Lose weight" onclick="JSFile:updateLabel(3)">
-				</div>
-
-				<!-- <input class="w3-button w3-round" type="button" id="weightGoal" value="Lose weight"> -->
-			</td>
-			<td>
-				<div class="w3-button w3-round" id="maintainWeightLabel">
-					<label for="Maintain weight">Maintain weight</label>
-					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
-						name="weightGoal" value="Maintain weight" id="Maintain weight" onclick="JSFile:updateLabel(4)">
-				</div>
-				<!-- <input class="w3-button w3-round" type="button" id="weightGoal" value="Maintain weight"> -->
-			</td>
-			<td>
-				<div class="w3-button w3-round" id="gainWeightLabel">
-					<label for="Gain weight">Gain weight</label>
-					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
-						name="weightGoal" value="Gain weight" id="Gain weight" onclick="JSFile:updateLabel(5)">
-				</div>
-				<!-- <input class="w3-button w3-round" type="button" id="weightGoal" value="Gain weight"> -->
-			</td>
-		</tr>
-
-		<!-- Age selection -->
-		<tr>
-			<td colspan="2" id="ageTag">I am years old</td>
-		</tr>
-		<tr>
-			<td colspan="5"><input style="width: 100%;" type="range" min="18" value="20" max="100" step="1"
-					oninput="showAgeVal(this.value)"></td>
-		</tr>
-
-		<!-- Height selection -->
-		<tr>
-			<td colspan="2" id="heightTag">I am height tall</td>
-		</tr>
-		<tr>
-			<td colspan="5"><input style="width: 100%;" type="range" min="121" value="100" max="213" step="1"
-					oninput="showHeightVal(this.value)"></td>
-		</tr>
-
-		<!-- Weight selection -->
-		<tr>
-			<td colspan="2" id="weightTag">I am weight kg</td>
-		</tr>
-		<tr>
-			<td colspan="5"><input style="width: 100%;" type="range" min="30" value="100" max="500" step="1"
-					oninput="showWeightVal(this.value)"></td>
-		</tr>
-
-		<!-- Acivity level -->
-		<tr>
-			<td colspan="2">How active are you?</td>
-		</tr>
-		<tr>
-			<td>
-				<div class="w3-button w3-round" id="littleNoneActivityLabel">
-					<label for="Little - none">Little - none</label>
-					<input style="opacity: 0; position: fixed;" type="radio" name="activityLevel" value="Little - none"
-						id="Little - none" onclick="JSFile:updateLabel(6)">
-				</div>
-			</td>
-			<td>
-				<div class="w3-button w3-round" id="lightlyActivityLabel">
-					<label for="Lightly active">Lightly active</label>
-					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
-						name="activityLevel" value="Lightly active" id="Lightly active" onclick="JSFile:updateLabel(7)">
-				</div>
-			</td>
-			<td>
-				<div class="w3-button w3-round" id="moderatelyAcitivityLabel">
-					<label for="Moderately active">Moderately active</label>
-					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
-						name="activityLevel" value="Moderately active" id="Moderately active"
-						onclick="JSFile:updateLabel(8)">
-				</div>
-			</td>
-			<td>
-				<div class="w3-button w3-round" id="veryActivityLabel">
-					<label for="Very active">Very active</label>
-					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
-						name="activityLevel" value="Very active" id="Very active" onclick="JSFile:updateLabel(9)">
-				</div>
-			</td>
-			<td>
-				<div class="w3-button w3-round" id="extremelyActivityLabel">
-					<label for="Extremely active">Extremely active</label>
-					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
-						name="activityLevel" value="Extremely active" id="Extremely active"
-						onclick="JSFile:updateLabel(10)">
-				</div>
-			</td>
-		</tr>
-
-		<tr>
-			<td>
-				<div class="w3-button w3-round w3-light-blue">
-					<label for="Calculate">Calculate</label>
-					<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio" name="calculate"
-						value="Calculate" id="Calculate">
-				</div>
-			</td>
-		</tr>
-	</table>
-	<div class="w3-half">
-		<h1 class="w3-center">Your Daily Macro Goals</h1>
-		<div class="w3-center" id="plotArea"></div>
-		<div>
-			<p id="resultPara">Results will go here</p>
-		</div>
-		<table style="margin-left: auto; margin-right: auto;">
+	<div class="w3-half" style="overflow-x: auto;">
+		<table class="w3-table-all">
+			<!-- Gender selection -->
 			<tr>
-				<td class="w3-padding-large" style="color: lightblue;">
-					<div class="w3-card" style="width:150px; height: 150px;">
-						<div class="w3-center">
-							<img src="/images/carbohydrates_64x64.png" alt="Carbs">
-							<p id="carbsMacroCardValue">MacroValue</p>
-							<p>Carbs</p>
-						</div>
+				<td colspan="2">I'm a</td>
+			</tr>
+			<tr>
+				<td>
+					<div id="maleGenderLabel" class="w3-button w3-round">
+						<label for="male">Male</label>
+						<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+							name="gender" value="Male" id="male" onclick="JSFile:updateLabel(1)">
 					</div>
 				</td>
-				<td class="w3-padding-large" style="color: yellow;">
-					<div class="w3-card" style="width:150px; height: 150px;">
-						<div class="w3-center">
-							<img src="/images/protein_64x64.png" alt="Protein">
-							<p id="proteinMacroCardValue">MacroValue</p>
-							<p>Protein</p>
-						</div>
+				<td>
+					<div id="femaleGenderLabel" class="w3-button w3-round">
+						<label for="female">Female</label>
+						<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+							name="gender" value="Female" id="female" onclick="JSFile:updateLabel(2)">
 					</div>
 				</td>
-				<td class="w3-padding-large" style="color: lightcoral;">
-					<div class="w3-card" style="width:150px; height: 150px;">
-						<div class="w3-center">
-							<img src="/images/fats_64x64.png" alt="Fats">
-							<p id="fatsMacroCardValue">MacroValue</p>
-							<p>Fats</p>
-						</div>
+			</tr>
+
+			<!-- Weight Goal -->
+			<tr>
+				<td colspan="2">What is your main weight goal?</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="w3-button w3-round" id="loseWeightLabel">
+						<label for="Lose weight">Lose weight</label>
+						<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+							name="weightGoal" value="Lose weight" id="Lose weight" onclick="JSFile:updateLabel(3)">
+					</div>
+
+					<!-- <input class="w3-button w3-round" type="button" id="weightGoal" value="Lose weight"> -->
+				</td>
+				<td>
+					<div class="w3-button w3-round" id="maintainWeightLabel">
+						<label for="Maintain weight">Maintain weight</label>
+						<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+							name="weightGoal" value="Maintain weight" id="Maintain weight"
+							onclick="JSFile:updateLabel(4)">
+					</div>
+					<!-- <input class="w3-button w3-round" type="button" id="weightGoal" value="Maintain weight"> -->
+				</td>
+				<td>
+					<div class="w3-button w3-round" id="gainWeightLabel">
+						<label for="Gain weight">Gain weight</label>
+						<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+							name="weightGoal" value="Gain weight" id="Gain weight" onclick="JSFile:updateLabel(5)">
+					</div>
+					<!-- <input class="w3-button w3-round" type="button" id="weightGoal" value="Gain weight"> -->
+				</td>
+			</tr>
+
+			<!-- Age selection -->
+			<tr>
+				<td colspan="2" id="ageTag">I am years old</td>
+			</tr>
+			<tr>
+				<td colspan="5"><input style="width: 100%;" type="range" min="18" value="20" max="90" step="1"
+						oninput="showAgeVal(this.value)"></td>
+			</tr>
+
+			<!-- Height selection -->
+			<tr>
+				<td colspan="2" id="heightTag">I am height tall</td>
+			</tr>
+			<tr>
+				<td colspan="5"><input style="width: 100%;" type="range" min="121" value="170" max="213" step="1"
+						oninput="showHeightVal(this.value)"></td>
+			</tr>
+
+			<!-- Weight selection -->
+			<tr>
+				<td colspan="2" id="weightTag">I am weight kg</td>
+			</tr>
+			<tr>
+				<td colspan="5"><input style="width: 100%;" type="range" min="30" value="63" max="500" step="1"
+						oninput="showWeightVal(this.value)"></td>
+			</tr>
+
+			<!-- Acivity level -->
+			<tr>
+				<td colspan="2">How active are you?</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="w3-button w3-round" id="littleNoneActivityLabel">
+						<label for="Little - none">Little - none</label>
+						<input style="opacity: 0; position: fixed;" type="radio" name="activityLevel"
+							value="Little - none" id="Little - none" onclick="JSFile:updateLabel(6)">
+					</div>
+				</td>
+				<td>
+					<div class="w3-button w3-round" id="lightlyActivityLabel">
+						<label for="Lightly active">Lightly active</label>
+						<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+							name="activityLevel" value="Lightly active" id="Lightly active"
+							onclick="JSFile:updateLabel(7)">
+					</div>
+				</td>
+				<td>
+					<div class="w3-button w3-round" id="moderatelyAcitivityLabel">
+						<label for="Moderately active">Moderately active</label>
+						<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+							name="activityLevel" value="Moderately active" id="Moderately active"
+							onclick="JSFile:updateLabel(8)">
+					</div>
+				</td>
+				<td>
+					<div class="w3-button w3-round" id="veryActivityLabel">
+						<label for="Very active">Very active</label>
+						<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+							name="activityLevel" value="Very active" id="Very active" onclick="JSFile:updateLabel(9)">
+					</div>
+				</td>
+				<td>
+					<div class="w3-button w3-round" id="extremelyActivityLabel">
+						<label for="Extremely active">Extremely active</label>
+						<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+							name="activityLevel" value="Extremely active" id="Extremely active"
+							onclick="JSFile:updateLabel(10)">
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<div class="w3-button w3-round w3-light-blue">
+						<label for="Calculate">Calculate</label>
+						<input style="opacity: 0; position: fixed;" class="w3-button w3-round" type="radio"
+							name="calculate" value="Calculate" id="Calculate">
 					</div>
 				</td>
 			</tr>
 		</table>
+	</div>
+	<div class="w3-half">
+		<h1 class="w3-center">Your Daily Macro Goals</h1>
+		<div class="w3-center" id="plotArea"></div>
+		<div style="overflow-x: auto;">
+			<table>
+				<tr>
+					<td class="w3-padding-large" style="color: rgb(31,119,180);">
+						<div class="w3-card" style="width:150px; height: 150px;">
+							<div class="w3-center">
+								<img src="/images/carbohydrates_64x64.png" alt="Carbs">
+								<p id="carbsMacroCardValue">MacroValue</p>
+								<p>Carbs</p>
+							</div>
+						</div>
+					</td>
+					<td class="w3-padding-large" style="color: rgb(255,127,14);">
+						<div class="w3-card" style="width:150px; height: 150px;">
+							<div class="w3-center">
+								<img src="/images/protein_64x64.png" alt="Protein">
+								<p id="proteinMacroCardValue">MacroValue</p>
+								<p>Protein</p>
+							</div>
+						</div>
+					</td>
+					<td class="w3-padding-large" style="color: rgb(44,160,44);">
+						<div class="w3-card" style="width:150px; height: 150px;">
+							<div class="w3-center">
+								<img src="/images/fats_64x64.png" alt="Fats">
+								<p id="fatsMacroCardValue">MacroValue</p>
+								<p>Fats</p>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 	<hr>
 </body>
