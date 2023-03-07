@@ -8,6 +8,7 @@
 // updateLabel function - look at PlotlyDemo (DONE)
 // Plotly (DONE)
 
+// Instead of radio bar, have bar with dropdown select to choose how you calculate height, weight and dietary type
 // Select menu to choose height in either CM, Inches, Feet Inches, Metres
 // L Based on select, remove slider and replace with input field(s)
 // Select menu to choose weight in either Kg, Pounds, Stone
@@ -16,10 +17,10 @@
 // Array of meals based on macro results
 // L Button with list of high carbs/protein/fat || high carbs/protein/fat meals
 // L if value>100 high else low
-
 // Possible
 // https://www.prospre.io/meal-plans?cals=3001&p=225&f=100&c=300&diet=normal
 // L replace values with values calculator gets
+// L Diet select
 
 var weight = 0;
 var height = 0;
@@ -27,6 +28,7 @@ var age = 0;
 var carbs = 0;
 var protein = 0;
 var fats = 0;
+// var BMR = 0;
 
 var $ = function (id) {
   return document.getElementById(id);
@@ -36,6 +38,7 @@ window.onload = function () {
     calculate();
     genPieChart();
   };
+  hideMealPlanDiv();
 };
 
 function SetFields(id) {
@@ -116,8 +119,6 @@ function calculateMacros() {
     "Extremely active": extremelyActivity,
   };
 
-  var BMR = 0;
-
   // STEPS:
   // 1. Calculate base BMR
   // 2. Calculate daily BMR based on level of activity
@@ -178,6 +179,8 @@ function calculate() {
 	calls the appropriate function.  For example if the Macro Calculator is checked the calculateMacros
 	function is called.*/
   calculateMacros();
+  searchMealPlan();
+  showHideMealPlanDiv();
 }
 
 function showAgeVal(ageValue) {
@@ -295,4 +298,27 @@ function genPieChart() {
   };
   // Display using Plotly
   Plotly.newPlot("plotArea", data, layout);
+}
+
+// https://www.prospre.io/meal-plans?cals=3001&p=225&f=100&c=300&diet=normal
+function searchMealPlan() {
+  var link = `https://www.prospre.io/meal-plans?cals=${BMR}&p=${protein}&f=${fats}&c=${carbs}&diet=normal`;
+  $("mealPlanLink").href = link;
+}
+
+function showHideMealPlanDiv() {
+  var x = $("mealPlanDiv");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function hideMealPlanDiv() {
+  var x = $("mealPlanDiv");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "none";
+  }
 }
