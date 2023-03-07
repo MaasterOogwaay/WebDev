@@ -9,11 +9,13 @@
 // Plotly (DONE)
 
 // Instead of radio bar, have bar with dropdown select to choose how you calculate height, weight and dietary type
-// Select menu to choose height in either CM, Inches, Feet Inches, Metres
+//L Calculate height (dropdown) | Calculate weight (dropdown) | Dietary type (dropdown)
+// Select menu to choose height in either CM, Feet Inches, Metres
 // L Based on select, remove slider and replace with input field(s)
 // Select menu to choose weight in either Kg, Pounds, Stone
 // L Based on select, remove slider and replace with input field(s)
 // Show BMI on same page as macros - "Notice: This does not fully represent your true BMI" (Remove radio bar)
+
 // Array of meals based on macro results
 // L Button with list of high carbs/protein/fat || high carbs/protein/fat meals
 // L if value>100 high else low
@@ -41,24 +43,61 @@ window.onload = function () {
   hideMealPlanDiv();
 };
 
-function SetFields(id) {
-  /*This function takes an id which is an integer as a parameter.
-	This is parameter is passed from the radio buttons in the HTML file.
-  e.g If the id is 1, then the Macros calculator is shown*/
-  if (id == 1) {
-    // $("width").disabled = false;
-    // $("length").disabled = false;
-    // $("height").disabled = false;
-    // $("radius").disabled = true;
-    // $("theImage").src = "images/cube.jpg";
-    document.title = "Macro Calculator";
-  }
-  if (id == 2) {
-    document.title = "BMI Calculator";
-  }
-  if (id == 3) {
-    document.title = "Body Fat Calculator";
-  }
+// function SetFields(id) {
+//   /*This function takes an id which is an integer as a parameter.
+// 	This is parameter is passed from the radio buttons in the HTML file.
+//   e.g If the id is 1, then the Macros calculator is shown*/
+//   if (id == 1) {
+//     // $("width").disabled = false;
+//     // $("length").disabled = false;
+//     // $("height").disabled = false;
+//     // $("radius").disabled = true;
+//     // $("theImage").src = "images/cube.jpg";
+//     document.title = "Macro Calculator";
+//   }
+//   if (id == 2) {
+//     document.title = "BMI Calculator";
+//   }
+//   if (id == 3) {
+//     document.title = "Body Fat Calculator";
+//   }
+// }
+
+document.addEventListener("DOMContentLoaded", () => {
+  calculateHeightType();
+});
+
+// https://medium.com/@ecastille924/using-javascript-to-update-the-dom-on-dropdown-selection-one-example-bf5f1c53bead
+function calculateHeightType() {
+  var heightOption = $("calculateHeightOption");
+
+  heightOption.addEventListener("change", function () {
+    heightOption.value;
+    console.log(heightOption.value);
+    var option = heightOption.value;
+
+    if (option === "centimetres") {
+      $("feetHeight").style.display = "none";
+      $("inchesHeight").style.display = "none";
+      $("cmSlider").style.display = "block";
+      $("metresHeight").style.display = "none";
+      $("cmHeight").style.display = "none";
+    }
+    if (option === "feetInches") {
+      $("feetHeight").style.display = "block";
+      $("inchesHeight").style.display = "block";
+      $("cmSlider").style.display = "none";
+      $("metresHeight").style.display = "none";
+      $("cmHeight").style.display = "none";
+    }
+    if (option === "metres") {
+      $("feetHeight").style.display = "none";
+      $("inchesHeight").style.display = "none";
+      $("cmSlider").style.display = "none";
+      $("metresHeight").style.display = "block";
+      $("cmHeight").style.display = "block";
+    }
+  });
 }
 
 function displayWeightActivity(BMR) {
@@ -167,13 +206,7 @@ function calculateBMI() {
   // Formula: weight (kg) / [height (m)]^2
   //   The formula for BMI is weight in kilograms divided by height in meters squared. If height has been measured in centimeters, divide by 100 to convert this to meters.
 }
-function calculateBodyFat() {
-  /* NEED TO ADD COMMENTS */
-  // Body fat percentage (BFP) formula for adult males:
-  //   BFP = 1.20 × BMI + 0.23 × Age - 16.2
-  // Body fat percentage (BFP) formula for adult females:
-  //   BFP = 1.20 × BMI + 0.23 × Age - 5.4
-}
+
 function calculate() {
   /*This function checks to see what radio-button is selected and then
 	calls the appropriate function.  For example if the Macro Calculator is checked the calculateMacros
