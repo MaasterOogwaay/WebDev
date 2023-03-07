@@ -3,11 +3,23 @@
 // Fix the buttons in HTML (DONE)
 // Macro calculator for rest of males and all females (DONE)
 // BMI calculator
-// Body fat calculator
 // Change id's of everything || create global variables (OBSELETE)
 // Change cells to be like HTML line 100 (DONE)
 // updateLabel function - look at PlotlyDemo (DONE)
 // Plotly (DONE)
+
+// Select menu to choose height in either CM, Inches, Feet Inches, Metres
+// L Based on select, remove slider and replace with input field(s)
+// Select menu to choose weight in either Kg, Pounds, Stone
+// L Based on select, remove slider and replace with input field(s)
+// Show BMI on same page as macros - "Notice: This does not fully represent your true BMI" (Remove radio bar)
+// Array of meals based on macro results
+// L Button with list of high carbs/protein/fat || high carbs/protein/fat meals
+// L if value>100 high else low
+
+// Possible
+// https://www.prospre.io/meal-plans?cals=3001&p=225&f=100&c=300&diet=normal
+// L replace values with values calculator gets
 
 var weight = 0;
 var height = 0;
@@ -50,22 +62,6 @@ function displayWeightActivity(BMR) {
   var genderValue = document.querySelector("input[type=radio][name=gender]:checked")?.value;
   var weightGoalValue = document.querySelector("input[type=radio][name=weightGoal]:checked")?.value;
   var activityLevelValue = document.querySelector("input[type=radio][name=activityLevel]:checked")?.value;
-
-  if (genderValue) {
-    console.log("Gender was selected");
-  } else {
-    alert("Gender wasn't selected");
-  }
-  if (weightGoalValue) {
-    console.log("Weight Goal was selected");
-  } else {
-    alert("Weight Goal wasn't selected");
-  }
-  if (activityLevelValue) {
-    console.log("Activity Level was selected");
-  } else {
-    alert("Activity Level wasn't selected");
-  }
 
   if (weightGoalValue == "Lose weight") {
     console.log(`Calculating macro split for ${genderValue}, ${activityLevelValue}, ${weightGoalValue}`);
