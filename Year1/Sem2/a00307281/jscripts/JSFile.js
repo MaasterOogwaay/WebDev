@@ -24,6 +24,8 @@
 // L replace values with values calculator gets
 // L Diet select
 
+// instead of height if statement, create a function which calculates height and returns it
+
 var weight = 0;
 var height = 0;
 var age = 0;
@@ -35,6 +37,7 @@ var fats = 0;
 var $ = function (id) {
   return document.getElementById(id);
 };
+
 window.onload = function () {
   $("Calculate").onclick = function () {
     calculate();
@@ -70,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // https://medium.com/@ecastille924/using-javascript-to-update-the-dom-on-dropdown-selection-one-example-bf5f1c53bead
 function calculateHeightType() {
   var heightOption = $("calculateHeightOption");
-
   heightOption.addEventListener("change", function () {
     heightOption.value;
     console.log(heightOption.value);
@@ -98,6 +100,30 @@ function calculateHeightType() {
       $("cmHeight").style.display = "block";
     }
   });
+}
+
+function calculateHeight() {
+  var heightOption = $("calculateHeightOption");
+  console.log(heightOption.value);
+
+  // check for inches >0 < 10
+  if (heightOption.value === "feetInches") {
+    console.log("feetHeight = " + $("feetHeight").value);
+    console.log("inchesHeight = " + $("inchesHeight").value);
+    if (isNaN(parseInt($("feetHeight").value)) || isNaN(parseInt($("inchesHeight").value))) {
+      alert("The height values you entered must be numerical");
+    } else {
+      height = Math.floor(parseInt($("feetHeight").value) * 30.4 + parseInt($("inchesHeight").value) * 2.54);
+      console.log("Total feetInches in cm = " + height);
+    }
+  }
+  // check for cm is >0<=100
+  if (heightOption.value === "metres") {
+    console.log("metresHeight = " + $("metresHeight").value);
+    console.log("cmHeight = " + $("cmHeight").value);
+    height = Math.floor(parseInt($("metresHeight").value) * 100 + parseInt($("cmHeight").value));
+    console.log("Total metres in cm = " + height);
+  }
 }
 
 function displayWeightActivity(BMR) {
@@ -211,6 +237,7 @@ function calculate() {
   /*This function checks to see what radio-button is selected and then
 	calls the appropriate function.  For example if the Macro Calculator is checked the calculateMacros
 	function is called.*/
+  calculateHeight();
   calculateMacros();
   searchMealPlan();
   showHideMealPlanDiv();
@@ -224,6 +251,7 @@ function showAgeVal(ageValue) {
 
 function showHeightVal(heightValue) {
   console.log(heightValue);
+  // if statement checking which is selected
   height = heightValue;
   $("heightTag").innerHTML = "I am " + heightValue + "cm tall";
 }
@@ -335,7 +363,23 @@ function genPieChart() {
 
 // https://www.prospre.io/meal-plans?cals=3001&p=225&f=100&c=300&diet=normal
 function searchMealPlan() {
-  var link = `https://www.prospre.io/meal-plans?cals=${BMR}&p=${protein}&f=${fats}&c=${carbs}&diet=normal`;
+  var dietaryType = $("dietaryType").value;
+  console.log(`Dietary type: ${dietaryType}`);
+  var diet = "";
+  if (dietaryType == "normal") {
+    diet = "normal";
+    console.log("diet set to normal");
+  }
+  if (dietaryType == "vegetarian") {
+    diet = "vegetarian";
+    console.log("diet set to vegetarian");
+  }
+  if (dietaryType == "vegan") {
+    diet = "vegan";
+    console.log("diet set to vegan");
+  }
+
+  var link = `https://www.prospre.io/meal-plans?cals=${BMR}&p=${protein}&f=${fats}&c=${carbs}&diet=${diet}`;
   $("mealPlanLink").href = link;
 }
 
