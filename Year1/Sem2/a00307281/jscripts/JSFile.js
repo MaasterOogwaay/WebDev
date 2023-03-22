@@ -44,6 +44,9 @@ window.onload = function () {
     genPieChart();
   };
   hideMealPlanDiv();
+  $("cmSliderRow").style.display = "block";
+  $("feetInchesRow").style.display = "none";
+  $("metresCMRow").style.display = "none";
 };
 
 // function SetFields(id) {
@@ -79,25 +82,19 @@ function calculateHeightType() {
     var option = heightOption.value;
 
     if (option === "centimetres") {
-      $("feetHeight").style.display = "none";
-      $("inchesHeight").style.display = "none";
-      $("cmSlider").style.display = "block";
-      $("metresHeight").style.display = "none";
-      $("cmHeight").style.display = "none";
+      $("cmSliderRow").style.display = "block";
+      $("feetInchesRow").style.display = "none";
+      $("metresCMRow").style.display = "none";
     }
     if (option === "feetInches") {
-      $("feetHeight").style.display = "block";
-      $("inchesHeight").style.display = "block";
-      $("cmSlider").style.display = "none";
-      $("metresHeight").style.display = "none";
-      $("cmHeight").style.display = "none";
+      $("cmSliderRow").style.display = "none";
+      $("feetInchesRow").style.display = "block";
+      $("metresCMRow").style.display = "none";
     }
     if (option === "metres") {
-      $("feetHeight").style.display = "none";
-      $("inchesHeight").style.display = "none";
-      $("cmSlider").style.display = "none";
-      $("metresHeight").style.display = "block";
-      $("cmHeight").style.display = "block";
+      $("cmSliderRow").style.display = "none";
+      $("feetInchesRow").style.display = "none";
+      $("metresCMRow").style.display = "block";
     }
   });
 }
@@ -361,6 +358,7 @@ function genPieChart() {
   Plotly.newPlot("plotArea", data, layout);
 }
 
+// https://www.prospre.io/meal-plans?cals=1637&p=102&f=55&c=184&diet=normal
 // https://www.prospre.io/meal-plans?cals=3001&p=225&f=100&c=300&diet=normal
 function searchMealPlan() {
   var dietaryType = $("dietaryType").value;
