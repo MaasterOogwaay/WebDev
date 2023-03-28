@@ -47,7 +47,7 @@
 					</select>
 				</td>
 				<td></td>
-			
+
 				<td>
 					<label for="">Calculate weight:</label>
 					<select name="calculateWeightOption" id="calculateWeightOption">
@@ -57,7 +57,7 @@
 					</select>
 				</td>
 				<td></td>
-				
+
 				<td>
 					<label for="">Dietary type:</label>
 					<select name="dietaryType" id="dietaryType">
@@ -159,9 +159,16 @@
 			<tr>
 				<td colspan="2" id="weightTag">I am weight kg</td>
 			</tr>
-			<tr>
+			<tr id="kilogramsRow">
 				<td colspan="5"><input style="width: 100%;" type="range" min="30" value="63" max="500" step="1"
-						oninput="showWeightVal(this.value)"></td>
+						oninput="showWeightVal(this.value)">
+				</td>
+			</tr>
+			<tr id="poundsRow">
+				<td><input id="poundsWeight" placeholder="Pounds" /></td>
+			</tr>
+			<tr id="stonesRow">
+				<td><input id="stonesWeight" placeholder="Stones" /></td>
 			</tr>
 
 			<!-- Acivity level -->

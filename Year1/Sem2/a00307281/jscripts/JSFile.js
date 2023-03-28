@@ -14,7 +14,6 @@
 // L Based on select, remove slider and replace with input field(s)
 // Select menu to choose weight in either Kg, Pounds, Stone
 // L Based on select, remove slider and replace with input field(s)
-// Show BMI on same page as macros - "Notice: This does not fully represent your true BMI" (Remove radio bar)
 
 // Array of meals based on macro results
 // L Button with list of high carbs/protein/fat || high carbs/protein/fat meals
@@ -23,8 +22,6 @@
 // https://www.prospre.io/meal-plans?cals=3001&p=225&f=100&c=300&diet=normal
 // L replace values with values calculator gets
 // L Diet select
-
-// instead of height if statement, create a function which calculates height and returns it
 
 var weight = 0;
 var height = 0;
@@ -43,37 +40,75 @@ window.onload = function () {
     calculate();
     genPieChart();
   };
-  hideMealPlanDiv();
   $("cmSliderRow").style.display = "block";
   $("feetInchesRow").style.display = "none";
   $("metresCMRow").style.display = "none";
-};
 
-// function SetFields(id) {
-//   /*This function takes an id which is an integer as a parameter.
-// 	This is parameter is passed from the radio buttons in the HTML file.
-//   e.g If the id is 1, then the Macros calculator is shown*/
-//   if (id == 1) {
-//     // $("width").disabled = false;
-//     // $("length").disabled = false;
-//     // $("height").disabled = false;
-//     // $("radius").disabled = true;
-//     // $("theImage").src = "images/cube.jpg";
-//     document.title = "Macro Calculator";
-//   }
-//   if (id == 2) {
-//     document.title = "BMI Calculator";
-//   }
-//   if (id == 3) {
-//     document.title = "Body Fat Calculator";
-//   }
-// }
+  $("kilogramsRow").style.display = "block";
+  $("poundsRow").style.display = "none";
+  $("stonesRow").style.display = "none";
+
+  $("mealPlanDiv").style.display = "none";
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   calculateHeightType();
+  weightHeightType();
 });
 
 // https://medium.com/@ecastille924/using-javascript-to-update-the-dom-on-dropdown-selection-one-example-bf5f1c53bead
+function weightHeightType() {
+  var weightOption = $("calculateWeightOption");
+  weightOption.addEventListener("change", function () {
+    weightOption.value;
+    console.log(weightOption.value);
+    var option = weightOption.value;
+
+    if (option === "kilograms") {
+      $("kilogramsRow").style.display = "block";
+      $("poundsRow").style.display = "none";
+      $("stonesRow").style.display = "none";
+    }
+    if (option === "pounds") {
+      $("kilogramsRow").style.display = "none";
+      $("poundsRow").style.display = "block";
+      $("stonesRow").style.display = "none";
+    }
+    if (option === "stones") {
+      $("kilogramsRow").style.display = "none";
+      $("poundsRow").style.display = "none";
+      $("stonesRow").style.display = "block";
+    }
+  });
+}
+
+function calculateWeight() {
+  var weightOption = $("calculateWeightOption");
+  console.log(weightOption.value);
+
+  if (weightOption.value === "pounds") {
+    if (isNaN(parseInt($("poundsWeight").value))) {
+      alert("The weight values you entered must be numerical");
+    } else {
+      weight = Math.floor(parseInt($("poundsWeight").value) * 0.45359237);
+      console.log("Total pound weight in kg = " + weight);
+
+      $("weightTag").innerHTML = "I am " + $("poundsWeight").value + " pounds";
+    }
+  }
+
+  if (weightOption.value === "stones") {
+    if (isNaN(parseInt($("stonesWeight").value))) {
+      alert("The weight values you entered must be numerical");
+    } else {
+      weight = Math.floor(parseInt($("stonesWeight").value) * 6.35);
+      console.log("Total stone weight in kg = " + weight);
+
+      $("weightTag").innerHTML = "I am " + $("stonesWeight").value + " stones";
+    }
+  }
+}
+
 function calculateHeightType() {
   var heightOption = $("calculateHeightOption");
   heightOption.addEventListener("change", function () {
@@ -103,23 +138,32 @@ function calculateHeight() {
   var heightOption = $("calculateHeightOption");
   console.log(heightOption.value);
 
-  // check for inches >0 < 10
   if (heightOption.value === "feetInches") {
     console.log("feetHeight = " + $("feetHeight").value);
     console.log("inchesHeight = " + $("inchesHeight").value);
+
     if (isNaN(parseInt($("feetHeight").value)) || isNaN(parseInt($("inchesHeight").value))) {
       alert("The height values you entered must be numerical");
     } else {
       height = Math.floor(parseInt($("feetHeight").value) * 30.4 + parseInt($("inchesHeight").value) * 2.54);
       console.log("Total feetInches in cm = " + height);
+
+      $("heightTag").innerHTML = "I am " + $("feetHeight").value + "ft " + $("inchesHeight").value + " inches tall";
     }
   }
-  // check for cm is >0<=100
+
   if (heightOption.value === "metres") {
     console.log("metresHeight = " + $("metresHeight").value);
     console.log("cmHeight = " + $("cmHeight").value);
-    height = Math.floor(parseInt($("metresHeight").value) * 100 + parseInt($("cmHeight").value));
-    console.log("Total metres in cm = " + height);
+
+    if (isNaN(parseInt($("metresHeight").value)) || isNaN(parseInt($("cmHeight").value))) {
+      alert("The height values you entered must be numerical");
+    } else {
+      height = Math.floor(parseInt($("metresHeight").value) * 100 + parseInt($("cmHeight").value));
+      console.log("Total metres in cm = " + height);
+
+      $("heightTag").innerHTML = "I am " + $("metresHeight").value + " metres " + $("cmHeight").value + " cm tall";
+    }
   }
 }
 
@@ -224,20 +268,16 @@ function calculateMacros() {
     displayWeightActivity(BMR);
   }
 }
-function calculateBMI() {
-  /* NEED TO ADD COMMENTS */
-  // Formula: weight (kg) / [height (m)]^2
-  //   The formula for BMI is weight in kilograms divided by height in meters squared. If height has been measured in centimeters, divide by 100 to convert this to meters.
-}
 
 function calculate() {
   /*This function checks to see what radio-button is selected and then
 	calls the appropriate function.  For example if the Macro Calculator is checked the calculateMacros
 	function is called.*/
   calculateHeight();
+  calculateWeight();
   calculateMacros();
   searchMealPlan();
-  showHideMealPlanDiv();
+  $("mealPlanDiv").style.display = "block";
 }
 
 function showAgeVal(ageValue) {
@@ -379,21 +419,4 @@ function searchMealPlan() {
 
   var link = `https://www.prospre.io/meal-plans?cals=${BMR}&p=${protein}&f=${fats}&c=${carbs}&diet=${diet}`;
   $("mealPlanLink").href = link;
-}
-
-function showHideMealPlanDiv() {
-  var x = $("mealPlanDiv");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-function hideMealPlanDiv() {
-  var x = $("mealPlanDiv");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "none";
-  }
 }
