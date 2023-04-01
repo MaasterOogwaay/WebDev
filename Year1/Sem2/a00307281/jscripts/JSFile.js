@@ -40,11 +40,11 @@ window.onload = function () {
     calculate();
     genPieChart();
   };
-  $("cmSliderRow").style.display = "block";
+  $("cmSliderRow").style.display = "table-row";
   $("feetInchesRow").style.display = "none";
   $("metresCMRow").style.display = "none";
 
-  $("kilogramsRow").style.display = "block";
+  $("kilogramsRow").style.display = "table-row";
   $("poundsRow").style.display = "none";
   $("stonesRow").style.display = "none";
 
@@ -65,19 +65,19 @@ function weightHeightType() {
     var option = weightOption.value;
 
     if (option === "kilograms") {
-      $("kilogramsRow").style.display = "block";
+      $("kilogramsRow").style.display = "table-row";
       $("poundsRow").style.display = "none";
       $("stonesRow").style.display = "none";
     }
     if (option === "pounds") {
       $("kilogramsRow").style.display = "none";
-      $("poundsRow").style.display = "block";
+      $("poundsRow").style.display = "table-row";
       $("stonesRow").style.display = "none";
     }
     if (option === "stones") {
       $("kilogramsRow").style.display = "none";
       $("poundsRow").style.display = "none";
-      $("stonesRow").style.display = "block";
+      $("stonesRow").style.display = "table-row";
     }
   });
 }
@@ -117,19 +117,19 @@ function calculateHeightType() {
     var option = heightOption.value;
 
     if (option === "centimetres") {
-      $("cmSliderRow").style.display = "block";
+      $("cmSliderRow").style.display = "table-row";
       $("feetInchesRow").style.display = "none";
       $("metresCMRow").style.display = "none";
     }
     if (option === "feetInches") {
       $("cmSliderRow").style.display = "none";
-      $("feetInchesRow").style.display = "block";
+      $("feetInchesRow").style.display = "table-row";
       $("metresCMRow").style.display = "none";
     }
     if (option === "metres") {
       $("cmSliderRow").style.display = "none";
       $("feetInchesRow").style.display = "none";
-      $("metresCMRow").style.display = "block";
+      $("metresCMRow").style.display = "table-row";
     }
   });
 }
