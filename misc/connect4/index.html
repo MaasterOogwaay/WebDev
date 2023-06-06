@@ -1,16 +1,100 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<title>W3CSS JavaScrtipt Template Root</title>
-		<link href="images/favicon.ico" rel="shortcut icon" />
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<script type="text/javascript" src="js/myScript.js"></script>		
-	</head>
-	<body>
-		<header class="w3-row w3-center">
-			<h1>Sample Root Folder With</h1>
-			<h1>W3CSS and JavaScript</h1>
-			<img  src="images/Hello-Foundling.jpg" class="w3-circle"/>
-		</header>
-	</body>
+
+<head>
+	<title>Connect 4</title>
+	<link rel="stylesheet" href="css/w3.css">
+	<link rel="stylesheet" href="css/G3.css">
+	<script type="text/javascript" src="js/myScript.js"></script>
+</head>
+
+<body class="w3-margin">
+	<header class="w3-row w3-green w3-center">
+		<h1> Connect 4</h1>
+	</header>
+	<main class="w3-margin-top">
+		<div class="w3-row">
+			<div class="w3-half w3-container">
+				<p>To play the game:</p>
+				<ul>
+					<li>There is a spot on the grid that if you guess wrong will cause you to loose the game that is generated at random each game</li>
+					<li>You must try select all spots without landing on the <span>X</span> </li>
+					<li>The progress bar will let you know how close you are to winning</li>
+					<li>Enter your grid position below and click Submit</li>
+				</ul>
+				<p>Best of luck........</p>
+			</div>
+			<div class="w3-half w3-display-container w3-center w3-section">
+				<img class="center" src="images/logo.png" alt="">
+			</div>
+		</div>
+
+		<div class="w3-row">
+			<div class="w3-container">
+				<table border="1" style="background-color: blue;">
+					<tr>
+						<!-- <td id="pos1"><button id="1" class="w3-button w3-xlarge w3-circle w3-black" onclick="placeCoin()">+</button></td> -->
+						<td id="pos1" onclick="placeCoin()"></td>
+						<td id="pos2" onclick="placeCoin()"></td>
+						<td id="pos100" onclick="placeCoin2()"></td>
+						<td id="pos3"><button id="3" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos4"><button id="4" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos5"><button id="5" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos6"><button id="6" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos7"><button id="7" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+					</tr>
+					<tr>
+						<td id="pos8"><button id="8" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos9"><button id="9" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos10"><button id="10" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos11"><button id="11" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos12"><button id="12" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos13"><button id="13" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos14"><button id="14" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+					</tr>
+					<tr>
+						<td id="pos15"><button id="15" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos16"><button id="16" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos17"><button id="17" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos18"><button id="18" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos19"><button id="19" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos20"><button id="20" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos21"><button id="21" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+					</tr>
+					<tr>
+						<td id="pos22"><button id="22" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos23"><button id="23" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos24"><button id="24" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos25"><button id="25" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos26"><button id="26" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos27"><button id="27" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos28"><button id="28" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+					</tr>
+					<tr>
+						<td id="pos29"><button id="29" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos30"><button id="30" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos31"><button id="31" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos32"><button id="32" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos33"><button id="33" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos34"><button id="34" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos35"><button id="35" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+					</tr>
+					<tr>
+						<td id="pos36"><button id="36" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos37"><button id="37" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos38"><button id="38" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos39"><button id="39" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos40"><button id="40" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos41"><button id="41" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+						<td id="pos42"><button id="42" class="w3-button w3-xlarge w3-circle w3-black">+</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="w3-row w3-cetner">
+			
+		</div>
+	</main>
+</body>
+
 </html>
