@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title>Welcome Home</title>
+  </head>
+  <body>
+	Hello ${req.user.username}. Your session ID is ${req.sessionID} 
+     and your session expires in ${req.session.cookie.maxAge} 
+     milliseconds.<br><br>
+     <a href="/logout">Log Out</a><br><br>
+     <a href="/secret">Members Only</a>
+  </body>
+</html>
