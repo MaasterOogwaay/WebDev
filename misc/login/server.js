@@ -4,6 +4,7 @@ const session = require("express-session"); // session middleware
 const passport = require("passport"); // authentication
 const connectEnsureLogin = require("connect-ensure-login"); // authorization
 const User = require("./user.js"); // user model
+const UserDetails = require("./user");
 
 const app = express();
 
@@ -50,6 +51,11 @@ app.get("/login", (req, res) => {
   res.sendFile(__dirname + "/static/login.html");
 });
 
+// Signup page
+app.get("/signup", (req, res) => {
+  res.sendFile(__dirname + "/static/signup.html");
+});
+
 // Dashboard page. Only accessible to logged in users
 app.get("/dashboard", connectEnsureLogin.ensureLoggedIn(), (req, res) => {
   res.send(`Hello ${req.user.username}. Your session ID is ${req.sessionID} 
@@ -78,8 +84,13 @@ app.post("/login", passport.authenticate("local", { failureRedirect: "/" }), fun
   res.redirect("/dashboard");
 });
 
+app.post("/signup", function (req, res) {
+  UserDetails.register({ username: req.body.username, active: false }, req.body.password), res.redirect("/login");
+});
+
 /**
  * Assign port
  */
 const port = 3000;
+// const URL = "https://oogwaydev.me";
 app.listen(port, () => console.log(`Server listening on port ${port}`));
